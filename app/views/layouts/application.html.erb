@@ -2,13 +2,47 @@
 <html>
   <head>
     <title>PersonalSite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <div class="main-wrapper profile">
+      <header class="header">
+        <nav>
+          <h1><a href="/" class="curent">About</a> |
+          <a href="/projects">Projects</a> |
+          <a href="/contact">Contact</a> |
+          <a href="/blog" target="_blank">Blog</a> |
+          <a href="/resume" target="_blank">Resume</a></h1>
+        </nav>
+      </header>
+      <div class="profile-banner" id="yechiel-k-cover"></div>
+      <div class="vitals-container">
+        <div class="profile-photo" id="yechiel-k-card"></div>
+        <div class="social-icon-container">
+          <a href="https://www.github.com/achasveachas" target="_blank"><img class="social-icon" src="/assets/github.png"/></a>
+          <a href="https://www.linkedin.com/in/yechiel-k" target="_blank"><img class="social-icon" src="/assets/linkedin.png"/></a>
+          <a href="https://twitter.com/yechielk" target="_blank"><img class="social-icon" src="/assets/twitter.png"/></a>
+          <a href="/blog" target="_blank"><img class="social-icon" src="/assets/medium.png"/></a>
+        </div>
+        <div class="vitals-text-container">
+          <h1 class="profile-name">Yechiel Kalmenson</h1>
+          <h2 class="profile-location"><strong>A.K.A. Rabbi on Rails</strong></h2>
+          <h2 class="profile-location">Full Stack Web Developer</h2>
+          <h2 class="profile-location">Ruby, Sinatra, Rails, PHP, SQL, JavaScript, jQuery, React/Redux</h2><br>
+        </div>
+      </div>
+    </div>
     <%= yield %>
+    <footer class="footer">
+      &copy; 2018 <%= link_to "Yechiel Kalmenson", root_path %>
+      <p>
+        <br>Sponsored by <a target="_blank" href="https://mraberthon.com/">Mr. Aberthon</a>
+      </p>
+    </footer>
   </body>
 </html>

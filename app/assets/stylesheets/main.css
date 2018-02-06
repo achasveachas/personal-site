@@ -85,7 +85,7 @@ header {
 
 
 #yechiel-k-cover {
-  background-image: url("/images/fcm6zBK.jpg");
+  background-image: url("/assets/fcm6zBK.jpg");
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
@@ -94,7 +94,7 @@ header {
 
 
 #yechiel-k-card {
-  background-image: url("/images/yechiel-k.JPG");
+  background-image: url("/assets/yechiel-k.JPG");
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
@@ -170,8 +170,6 @@ input.submit {
 
 .vitals-container {
   position: relative;
-  min-height: 360px;
-  padding-bottom: 50px;
   border-bottom: 1px solid #e4e4e4;
 }
 
