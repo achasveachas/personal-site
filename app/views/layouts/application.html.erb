@@ -3,7 +3,6 @@
   <head>
     <title>PersonalSite</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,11 +12,11 @@
     <div class="main-wrapper profile">
       <header class="header">
         <nav>
-          <h1><a href="/" class="curent">About</a> |
-          <a href="/projects">Projects</a> |
-          <a href="/contact">Contact</a> |
-          <a href="/blog" target="_blank">Blog</a> |
-          <a href="/resume" target="_blank">Resume</a></h1>
+          <h1><%= link_to_unless_current "About", root_path %> |
+          <%= link_to_unless_current "Projects", projects_path %> |
+          <%= link_to_unless_current "Contact", contact_path %> |
+          <%= link_to_unless_current "Blog", blog_path, target: "_blank" %> |
+          <%= link_to_unless_current "Resume", resume_path, target: "_blank" %></h1>
         </nav>
       </header>
       <div class="profile-banner" id="yechiel-k-cover"></div>
