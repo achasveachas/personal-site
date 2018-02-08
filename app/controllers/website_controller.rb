@@ -7,4 +7,10 @@ class WebsiteController < ApplicationController
 
   def projects
   end
+
+  def blog
+  end
+
+  def resume
+  end
 end
