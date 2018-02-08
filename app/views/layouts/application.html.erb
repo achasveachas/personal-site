@@ -81,20 +81,28 @@
       <div class="vitals-container">
         <div class="profile-photo" id="yechiel-k-card"></div>
         <div class="social-icon-container">
-          <a href="https://www.github.com/achasveachas" target="_blank"><img class="social-icon" src="/assets/github.png"/></a>
-          <a href="https://www.linkedin.com/in/yechiel-k" target="_blank"><img class="social-icon" src="/assets/linkedin.png"/></a>
-          <a href="https://twitter.com/yechielk" target="_blank"><img class="social-icon" src="/assets/twitter.png"/></a>
-          <a href="/blog" target="_blank"><img class="social-icon" src="/assets/medium.png"/></a>
+          <a href="https://www.github.com/achasveachas" target="_blank"><img alt="github icon" class="social-icon" src="/assets/github.png"/></a>
+          <a href="https://www.linkedin.com/in/yechiel-k" target="_blank"><img alt="linkedin icon" class="social-icon" src="/assets/linkedin.png"/></a>
+          <a href="https://twitter.com/yechielk" target="_blank"><img alt="twitter icon" class="social-icon" src="/assets/twitter.png"/></a>
+          <a href="/blog" target="_blank"><img alt="medium icon" class="social-icon" src="/assets/medium.png"/></a>
         </div>
         <div class="vitals-text-container">
           <h1 class="profile-name">Yechiel Kalmenson</h1>
           <h2 class="profile-location"><strong>A.K.A. Rabbi on Rails</strong></h2>
           <h2 class="profile-location">Full Stack Web Developer</h2>
           <h2 class="profile-location">Ruby, Sinatra, Rails, PHP, SQL, JavaScript, jQuery, React/Redux</h2><br>
+          <% if action_name == "index" %>
+            <div class="profile-quote">
+              “In life, there's no such thing as staying where you are. If you are not actively growing you are inevitably falling behind."<br>
+                -The Lubavitcher Rebbe
+            </div>
+          <% end %>
         </div>
       </div>
+
+      <%= yield %>
+
     </div>
-    <%= yield %>
     <footer class="footer">
       &copy; 2018 <%= link_to "Yechiel Kalmenson", root_path %>
       <p>
