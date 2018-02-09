@@ -81,10 +81,10 @@
       <div class="vitals-container">
         <div class="profile-photo" id="yechiel-k-card"></div>
         <div class="social-icon-container">
-          <a href="https://www.github.com/achasveachas" target="_blank"><img alt="github icon" class="social-icon" src="/assets/github.png"/></a>
-          <a href="https://www.linkedin.com/in/yechiel-k" target="_blank"><img alt="linkedin icon" class="social-icon" src="/assets/linkedin.png"/></a>
-          <a href="https://twitter.com/yechielk" target="_blank"><img alt="twitter icon" class="social-icon" src="/assets/twitter.png"/></a>
-          <a href="/blog" target="_blank"><img alt="medium icon" class="social-icon" src="/assets/medium.png"/></a>
+          <a href="https://www.github.com/achasveachas" target="_blank"><%= image_tag "github.png", class: "social-icon" %></a>
+          <a href="https://www.linkedin.com/in/yechiel-k" target="_blank"><%= image_tag "linkedin.png", class: "social-icon" %></a>
+          <a href="https://twitter.com/yechielk" target="_blank"><%= image_tag "twitter.png", class: "social-icon" %></a>
+          <a href="/blog" target="_blank"><%= image_tag "medium.png", class: "social-icon" %></a>
         </div>
         <div class="vitals-text-container">
           <h1 class="profile-name">Yechiel Kalmenson</h1>
@@ -106,7 +106,7 @@
     <footer class="footer">
       &copy; 2018 <%= link_to "Yechiel Kalmenson", root_path %>
       <p>
-        <br>Sponsored by <a target="_blank" href="https://mraberthon.com/">Mr. Aberthon</a>
+        <br>Sponsored by <%= link_to "Mr. Aberthon", "https://mraberthon.com/", target: "_blank" %>
       </p>
     </footer>
   </body>
