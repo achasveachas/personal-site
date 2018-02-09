@@ -1,4 +1,6 @@
 class WebsiteController < ApplicationController
+  before_action :get_page_title
+
   def index
   end
 
