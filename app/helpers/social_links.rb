@@ -17,7 +17,7 @@ class SocialLinks
     end
 
     def blog
-        "https://blog.yechiel.me/"
+        "https://blog.yechiel.me"
     end
 
     def github
