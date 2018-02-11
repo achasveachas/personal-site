@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'index', to: 'website#index'
 
   get 'contact', to: 'website#contact'
@@ -12,4 +13,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'website#index'
+
+  get 'admin', to: 'admin/projects#admin'
+
+  namespace :admin do
+    resources :projects, only: [:create, :new, :edit, :update, :delete]
+  end
 end
