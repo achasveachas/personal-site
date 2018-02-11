@@ -4,7 +4,7 @@ class AdminController < ApplicationController
         
     end
 
-    def session
+    def new_session
         
     end
 
