@@ -81,10 +81,10 @@
       <div class="vitals-container">
         <div class="profile-photo" id="yechiel-k-card"></div>
         <div class="social-icon-container">
-          <a href="https://www.github.com/achasveachas" target="_blank"><%= image_tag "github.png", class: "social-icon" %></a>
-          <a href="https://www.linkedin.com/in/yechiel-k" target="_blank"><%= image_tag "linkedin.png", class: "social-icon" %></a>
-          <a href="https://twitter.com/yechielk" target="_blank"><%= image_tag "twitter.png", class: "social-icon" %></a>
-          <a href="/blog" target="_blank"><%= image_tag "medium.png", class: "social-icon" %></a>
+          <a href="<%= SocialLinks.github %>" target="_blank"><%= image_tag "github.png", class: "social-icon" %></a>
+          <a href="<%= SocialLinks.linkedin %>" target="_blank"><%= image_tag "linkedin.png", class: "social-icon" %></a>
+          <a href="<%= SocialLinks.twitter %>" target="_blank"><%= image_tag "twitter.png", class: "social-icon" %></a>
+          <a href="<%= blog_path %>" target="_blank"><%= image_tag "medium.png", class: "social-icon" %></a>
         </div>
         <div class="vitals-text-container">
           <h1 class="profile-name">Yechiel Kalmenson</h1>
