@@ -1,7 +1,4 @@
 class Admin::ProjectsController < ApplicationController
-  def admin
-    render 'admin/admin'
-  end
 
   def new
   end

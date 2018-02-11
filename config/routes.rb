@@ -14,9 +14,13 @@ Rails.application.routes.draw do
 
   root 'website#index'
 
-  get 'admin', to: 'admin/projects#admin'
+  get 'admin', to: 'admin#admin'
 
   namespace :admin do
+    get 'login'
+
+    post 'login', to: 'admin#session'
+    
     resources :projects, only: [:create, :new, :edit, :update, :delete]
   end
 end
