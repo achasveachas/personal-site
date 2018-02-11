@@ -1,26 +1,26 @@
 class SocialLinks
     
-    def email
+    def self.email
         "contact@yechiel.me"
     end
 
-    def twitter
+    def self.twitter
         "https://twitter.com/yechielk"
     end
 
-    def linkedin
+    def self.linkedin
         "https://www.linkedin.com/in/yechiel-k"
     end
 
-    def quora
+    def self.quora
         "https://www.quora.com/profile/Yechiel-Kay"
     end
 
-    def blog
+    def self.blog
         "https://blog.yechiel.me"
     end
 
-    def github
+    def self.github
         "https://github.com/achasveachas"
     end
 
