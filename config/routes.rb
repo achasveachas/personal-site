@@ -15,11 +15,12 @@ Rails.application.routes.draw do
   root 'website#index'
 
   get 'admin', to: 'admin#admin'
+  get 'login', to: 'admin#login'
+  post 'login', to: 'admin#session'
+
+  
 
   namespace :admin do
-    get 'login'
-
-    post 'login', to: 'admin#session'
     
     resources :projects, only: [:create, :new, :edit, :update, :delete]
   end
