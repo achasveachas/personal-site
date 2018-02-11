@@ -11,7 +11,7 @@ class WebsiteController < ApplicationController
   end
 
   def blog
-    redirect_to "https://blog.yechiel.me/"
+    redirect_to SocialLinks.blog
   end
 
   def resume
