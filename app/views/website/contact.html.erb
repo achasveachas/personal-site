@@ -1,2 +1,21 @@
-<h1>Website#contact</h1>
-<p>Find me in app/views/website/contact.html.erb</p>
+<div class="vitals-text-container">
+
+    <h2><strong>Contact Me:</strong></h2>
+    <br>
+    <h3 class="profile-contact">Blog: <%= link_to "Rabbi On Rails", blog_path, target: "_blank" %> | 
+    Email: <%= mail_to "contact@yechiel.me" %></h3>
+    <h3 class="profile-contact">LinkedIn: <a href="https://www.linkedin.com/in/yechiel-k" target="_blank">Yechiel Kalmenson</a> | 
+    Github: <a href="https://github.com/achasveachas" target="_blank">achasveachas</a></h3>
+    <h3 class="profile-contact">Twitter: <a href="https://twitter.com/yechielk" target="_blank">@yechielk</a> | 
+    Quora: <a href="https://www.quora.com/profile/Yechiel-Kay" target="_blank">Yechiel Kay</a></h3>
+    <br><br><br>
+    <%= form_tag "https://formspree.io/form@yechiel.me", class: "form-container" do %>
+        <%= text_field_tag :name, "", placeholder: "Name:" %><br><br>
+        <%= email_field_tag :email, "", placeholder: "Email:" %><br><br>
+        <%= text_area_tag :message, "", placeholder: "Your Message:", rows: "10" %><br><br>
+        <%= hidden_field_tag :_next, "https://yechiel.me/contact" %>
+        <%= hidden_field_tag :_format, "plain" %>
+        <%= hidden_field_tag :_subject, "Yechiel Kalmenson Contact Form" %>
+        <%= submit_tag "Send", class: "submit" %>
+    <% end %>
+</div>
