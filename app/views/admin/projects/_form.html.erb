@@ -1,6 +1,6 @@
 <div class="vitals-text-container">
 
-  <%= form_with model: @project, class: "form-container" do |form| %>
+  <%= form_with model: [:admin, @project], class: "form-container" do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name %>
     <%= form.label :description %>
