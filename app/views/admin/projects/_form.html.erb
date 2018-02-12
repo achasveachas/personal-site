@@ -1,0 +1,21 @@
+<div class="vitals-text-container">
+
+  <%= form_with model: @project, class: "form-container" do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: "7" %>
+    <%= form.label :demo_url, "Demo URL" %>
+    <%= form.text_field :demo_url %>
+    <%= form.label :demo_username %>
+    <%= form.text_field :demo_username %>
+    <%= form.label :demo_password %>
+    <%= form.text_field :demo_password %>
+    <%= form.label :repo %>
+    <%= form.text_field :repo %>
+    <%= form.label :blog_post %>
+    <%= form.text_field :blog_post %>
+    <%= form.submit class: "submit" %>
+  <% end %>
+
+</div>
