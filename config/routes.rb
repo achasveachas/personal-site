@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin#admin'
   get 'login', to: 'admin#login'
-  post 'login', to: 'admin#session'
+  get 'logout', to: 'admin#logout'
+  post 'login', to: 'admin#new_session'
 
   
 
