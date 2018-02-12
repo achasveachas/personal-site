@@ -8,6 +8,7 @@ class WebsiteController < ApplicationController
   end
 
   def projects
+    @projects = Project.all
   end
 
   def blog

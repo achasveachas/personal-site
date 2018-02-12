@@ -4,6 +4,32 @@
 </div>
 
 <div class="details-container">
+    <% @projects.each do |project| %>
+    <div class="experience-block details-block">
+        <div class="experience-content content-holder">
+            <div class="title-holder">
+                <h3><%= project.name %></h3>
+            </div>
+            <div class="description-holder">
+                <p>
+                    <%= project.description %><br><br>
+                    <% if !project.demo_url.empty? %>
+                        <strong>Live App:</strong><%= link_to project.name, project.demo_url, target: "_blank" %><br>
+                    <% end %>
+                    <% if !project.demo_username.empty? && !project.demo_password.empty? %>
+                        <small>(<strong>Demo Username:</strong> <%= project.demo_username %>, <strong>Password:</strong> <%= project.demo_password %>)</small><br>
+                    <% end %>
+                    <% if !project.repo.empty? %>
+                        <strong>GitHub Repo:</strong> <%= link_to project.name, project.repo, target: "_blank" %> <br>
+                    <% end %>
+                    <% if !project.blog_post.empty? %>
+                        <strong>Blog Post:</strong> <%= link_to project.blog_title, project.blog_post, target: "_blank" %> <br>
+                    <% end %>
+                </p>
+            </div>
+        </div>
+    </div>
+    <%end%>
     <div class="experience-block details-block">
         <div class="experience-content content-holder">
             <div class="title-holder">
