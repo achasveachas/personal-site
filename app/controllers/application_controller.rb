@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :get_page_title, :require_admin
+  helper_method :get_page_title, :require_admin, :is_admin?
 
   private
 
@@ -10,5 +10,9 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     redirect_to login_path unless session[:admin]
+  end
+
+  def is_admin?
+    session[:admin]
   end
 end
