@@ -12,7 +12,7 @@
             </div>
             <div class="description-holder">
                 <p>
-                    <%= project.description %><br><br>
+                    <%= project.description.html_safe %><br><br>
                     <% if !project.demo_url.empty? %>
                         <strong>Live App:</strong><%= link_to project.name, project.demo_url, target: "_blank" %><br>
                     <% end %>
@@ -24,6 +24,11 @@
                     <% end %>
                     <% if !project.blog_post.empty? %>
                         <strong>Blog Post:</strong> <%= link_to project.blog_title, project.blog_post, target: "_blank" %> <br>
+                    <% end %>
+                    <% if is_admin? %>
+                      ___
+                      <br>
+                      <%= link_to "Edit", edit_admin_project_path(project) %>
                     <% end %>
                 </p>
             </div>
