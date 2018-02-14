@@ -23,6 +23,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     
-    resources :projects, only: [:create, :new, :edit, :update, :delete]
+    resources :projects, only: [:create, :new, :edit, :update, :destroy]
   end
 end
