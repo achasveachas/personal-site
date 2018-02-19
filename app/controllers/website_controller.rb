@@ -8,7 +8,7 @@ class WebsiteController < ApplicationController
   end
 
   def projects
-    @projects = Project.all
+    @projects = Project.all.reverse_order
   end
 
   def blog
