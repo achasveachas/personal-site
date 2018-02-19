@@ -1,6 +1,8 @@
 <div class="vitals-text-container">
     <h1 class="project-header">Projects I Enjoyed Creating</h1><br>
     <h4 class="project-subtitle">For more please check out my <%= link_to "GitHub Profile", SocialLinks.github, target: "_blank" %>.</h4>
+    <h4><%= link_to "New Project", new_admin_project_path if is_admin? %></h4>
+
 </div>
 
 <div class="details-container">
