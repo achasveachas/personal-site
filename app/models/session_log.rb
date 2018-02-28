@@ -1,0 +1,2 @@
+class SessionLog < ApplicationRecord
+end
