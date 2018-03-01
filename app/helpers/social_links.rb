@@ -24,4 +24,8 @@ class SocialLinks
         "https://github.com/achasveachas"
     end
 
+    def self.devto
+        "https://dev.to/yechielk"
+    end
+
 end
