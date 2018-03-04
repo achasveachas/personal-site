@@ -10,7 +10,7 @@ class AdminController < ApplicationController
     def new_session
         if params[:password] == ENV['ADMIN']
             session[:admin] = true 
-            redirect_to projects_path
+            redirect_to admin_path
         else
             render :login
         end
