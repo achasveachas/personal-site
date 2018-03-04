@@ -12,6 +12,7 @@ class Admin::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.blog_title = @project.blog_post if @project.blog_title.empty?
     if @project.save
       redirect_to projects_path
     else
@@ -22,6 +23,8 @@ class Admin::ProjectsController < ApplicationController
   def update
     @project = Project.find_by(id: params[:id])
     if @project.update_attributes(project_params)
+      @project.blog_title = @project.blog_post if @project.blog_title.empty?
+      @project.save
       redirect_to projects_path
     else
       render :edit
