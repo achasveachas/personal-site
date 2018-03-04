@@ -16,7 +16,7 @@
                     <p>
                         <%= project.description.html_safe %><br><br>
                         <% if !project.demo_url.empty? %>
-                            <strong>Live App:</strong><%= link_to project.name, project.demo_url, target: "_blank" %><br>
+                            <strong>Live App:</strong> <%= link_to project.name, project.demo_url, target: "_blank" %><br>
                         <% end %>
                         <% if !project.demo_username.empty? && !project.demo_password.empty? %>
                             <small>(<strong>Demo Username:</strong> <%= project.demo_username %>, <strong>Password:</strong> <%= project.demo_password %>)</small><br>
