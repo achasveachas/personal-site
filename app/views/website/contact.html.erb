@@ -2,13 +2,13 @@
 
     <h2><strong>Contact Me:</strong></h2>
     <br>
-    <h3 class="profile-contact">Blog: <%= link_to "Rabbi On Rails", blog_path, target: "_blank" %> | 
-    Email: <%= mail_to SocialLinks.email %></h3>
-    <h3 class="profile-contact">LinkedIn: <%= link_to "Yechiel Kalmenson", SocialLinks.linkedin, target: "_blank" %> | 
-    Github: <%= link_to "achasveachas", SocialLinks.github, target: "_blank" %></h3>
-    <h3 class="profile-contact">Twitter: <%= link_to "@yechielk", SocialLinks.twitter, target: "_blank" %> | 
-    Quora: <%= link_to "Yechiel Kay", SocialLinks.quora, target: "_blank" %></h3>
-    <h3>DEV.to: <%= link_to "yechielk", SocialLinks.devto, target: "_blank" %></h3>
+    <h3 class="profile-contact">Blog:&nbsp;<%= link_to "Rabbi On Rails", blog_path, target: "_blank" %> | 
+    Email:&nbsp;<%= mail_to SocialLinks.email %></h3>
+    <h3 class="profile-contact">LinkedIn:&nbsp;<%= link_to "Yechiel Kalmenson", SocialLinks.linkedin, target: "_blank" %> | 
+    Github:&nbsp;<%= link_to "achasveachas", SocialLinks.github, target: "_blank" %></h3>
+    <h3 class="profile-contact">Twitter:&nbsp;<%= link_to "@yechielk", SocialLinks.twitter, target: "_blank" %> | 
+    Quora:&nbsp;<%= link_to "Yechiel Kay", SocialLinks.quora, target: "_blank" %></h3>
+    <h3>DEV.to:&nbsp;<%= link_to "yechielk", SocialLinks.devto, target: "_blank" %></h3>
     <br><br><br>
     <%= form_with url: "https://formspree.io/form@yechiel.me", class: "form-container" do |f| %>
         <%= f.text_field :name, placeholder: "Name:" %><br><br>
