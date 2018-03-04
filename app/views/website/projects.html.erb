@@ -22,15 +22,15 @@
                             <small>(<strong>Demo Username:</strong> <%= project.demo_username %>, <strong>Password:</strong> <%= project.demo_password %>)</small><br>
                         <% end %>
                         <% if !project.repo.empty? %>
-                            <strong>GitHub Repo:</strong> <%= link_to project.name, project.repo, target: "_blank" %> <br>
+                            <strong>GitHub Repo:</strong> <%= link_to project.repo.split("/")[-1], project.repo, target: "_blank" %> <br>
                         <% end %>
                         <% if !project.blog_post.empty? %>
                             <strong>Blog Post:</strong> <%= link_to project.blog_title, project.blog_post, target: "_blank" %> <br>
                         <% end %>
                         <% if is_admin? %>
-                        ___
-                        <br>
-                        <%= link_to "Edit", edit_admin_project_path(project) %>
+                            ___
+                            <br>
+                            <%= link_to "Edit", edit_admin_project_path(project) %>
                         <% end %>
                     </p>
                 </div>
