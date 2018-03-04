@@ -1,6 +1,6 @@
 <br><h1>Logs</h1>
 <ul>
     <% @logs.each do |log| %>
-        <li><%= log.company || log.ip %> visited the <%= log.page_visited %> page on <%= log.created_at.localtime.strftime("%m/%d/%Y at %l:%M%p") %> from <%= log.location %></li><br>
+        <li><%= log.company || log.ip %> visited the <%= log.page_visited %> page on <%= log.created_at.localtime("-05:00").strftime("%m/%d/%Y at %l:%M%p") %> from <%= log.location %></li><br>
     <% end %>
 </ul>
