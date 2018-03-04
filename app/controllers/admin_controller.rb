@@ -15,7 +15,7 @@ class AdminController < ApplicationController
     end
 
     def admin
-
+        @logs = SessionLog.all.reverse_order
     end
 
     def logout

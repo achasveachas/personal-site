@@ -1,1 +1,6 @@
-<h1>Admin Page</h1>
+<br><h1>Logs</h1>
+<ul>
+    <% @logs.each do |log| %>
+        <li><%= log.company || log.ip %> visited the <%= log.page_visited %> page at <%= log.created_at %> from <%= log.location %></li><br>
+    <% end %>
+</ul>
