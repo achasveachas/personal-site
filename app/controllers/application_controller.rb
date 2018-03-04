@@ -18,10 +18,10 @@ class ApplicationController < ActionController::Base
   end
 
   def log_session
-    if !is_admin?
+    data = request.location.data
+    if !is_admin? && data['ip'] != "99.203.55.172"
       log = SessionLog.new
       log.company = params[:company] if params[:company]
-      data = request.location.data
       location = [data['city'], data['state'], data['zipcode'], data['country_name']].select{|i| i && !i.empty?}.join(', ')
       log.location = location
       log.ip = data['ip']
