@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318144710) do
+ActiveRecord::Schema.define(version: 20180318155039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20180318144710) do
     t.string "utm_content"
     t.string "utm_campaign"
     t.datetime "started_at"
+    t.string "company"
+    t.string "company_url"
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
   end
 

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :get_page_title, :require_admin, :is_admin?, :track_action
-  before_action :log_session
+  # before_action :log_session
 
   private
 
@@ -31,6 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def track_action
-    ahoy.track "Ran action", request.path_parameters
+    ahoy.track "Ran action", params
+    current_visit.update_attributes(company: params[:company]) if params[:company]
   end
 end

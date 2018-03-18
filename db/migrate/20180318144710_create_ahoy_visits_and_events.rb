@@ -31,6 +31,7 @@ class CreateAhoyVisitsAndEvents < ActiveRecord::Migration[5.1]
       t.string :utm_term
       t.string :utm_content
       t.string :utm_campaign
+      t.string :company
 
       t.timestamp :started_at
     end
