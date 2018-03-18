@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   root 'website#index'
 
-  get 'admin', to: 'admin#admin'
   get 'login', to: 'admin#login'
   get 'logout', to: 'admin#logout'
   post 'login', to: 'admin#new_session'
@@ -22,7 +21,7 @@ Rails.application.routes.draw do
   
 
   namespace :admin do
-    
+    resources :visits, only: [:index, :show]
     resources :projects, only: [:create, :new, :edit, :update, :destroy]
   end
 end
