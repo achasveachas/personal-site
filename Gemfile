@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # Use GeoCoder for logging user's location
 gem 'geocoder'
 
+# Use Ahoy for analytics
+gem 'ahoy_matey', '~> 2'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
