@@ -1,5 +1,7 @@
 class WebsiteController < ApplicationController
   before_action :get_page_title
+  after_action :track_action, unless: :is_admin?
+
 
   def index
   end
