@@ -1,0 +1,11 @@
+<div class="vitals-text-container">
+    <h4>Session <%= @visit.company || @visit.ip %> </h4>
+    <strong></strong><%= @visit.company || @visit.ip %></strong> visited on <%= @visit.started_at.localtime("-05:00").strftime("%m/%d/%Y at %l:%M%p") %> from <strong><%= @visit.location %></strong><br>
+
+</div>
+<ul>
+    <% @visit.attributes.each do |attr, value| %>
+        <li><strong><%= attr.capitalize %>:</strong> <%= value %>
+    <% end %>
+</ul>
+<br>

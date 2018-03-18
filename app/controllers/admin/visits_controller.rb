@@ -8,7 +8,7 @@ class Admin::VisitsController < ApplicationController
   end
 
   def show
-    @visit = params[:id]
+    @visit = Ahoy::Visit.find_by(id: params[:id])
   end
 
 end
