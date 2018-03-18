@@ -1,6 +1,8 @@
 class Admin::ProjectsController < ApplicationController
 
   before_action :require_admin
+  skip_before_action :track_ahoy_visit
+
 
   def new
     @project = Project.new

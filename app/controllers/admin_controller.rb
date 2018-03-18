@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
     skip_before_action :log_session
     before_action :require_admin, only: :admin
+    skip_before_action :track_ahoy_visit
 
     
     def login

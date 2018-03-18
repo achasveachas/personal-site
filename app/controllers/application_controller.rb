@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :get_page_title, :require_admin, :is_admin?
+  helper_method :get_page_title, :require_admin, :is_admin?, :track_action
   before_action :log_session
+  after_action :track_action
 
   private
 
@@ -28,5 +29,9 @@ class ApplicationController < ActionController::Base
       log.page_visited = params[:action]
       log.save
     end
+  end
+
+  def track_action
+    ahoy.track "Ran action", request.path_parameters
   end
 end
