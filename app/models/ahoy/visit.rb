@@ -3,4 +3,8 @@ class Ahoy::Visit < ApplicationRecord
 
   has_many :events, class_name: "Ahoy::Event"
 
+  def location
+    location = [city, region, country].select{|i| i && !i.empty?}.join(', ')
+  end
+
 end
