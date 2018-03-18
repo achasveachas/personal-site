@@ -46,6 +46,8 @@ group :development, :test do
 
   # Use dotenv for env variables
   gem 'dotenv-rails'
+
+  gem 'pry'
 end
 
 group :development do
