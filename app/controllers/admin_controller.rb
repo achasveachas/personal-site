@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-    skip_before_action :log_session
+
     before_action :require_admin, only: :admin
     skip_before_action :track_ahoy_visit
 
@@ -17,9 +17,7 @@ class AdminController < ApplicationController
         end
     end
 
-    def admin
-        @logs = SessionLog.all.reverse_order
-    end
+
 
     def logout
         session[:admin] = false
