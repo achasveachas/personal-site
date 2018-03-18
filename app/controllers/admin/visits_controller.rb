@@ -4,7 +4,11 @@ class Admin::VisitsController < ApplicationController
   skip_before_action :track_ahoy_visit
 
   def index
-    @logs = Ahoy::Visit.all.reverse_order
+    @visits = Ahoy::Visit.all.reverse_order
+  end
+
+  def show
+    @visit = params[:id]
   end
 
 end
