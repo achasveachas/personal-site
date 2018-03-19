@@ -1,11 +1,25 @@
 <div class="vitals-text-container">
     <h4>Session <%= @visit.company || @visit.ip %> </h4>
-    <strong></strong><%= @visit.company || @visit.ip %></strong> visited on <%= @visit.started_at.localtime("-05:00").strftime("%m/%d/%Y at %l:%M%p") %> from <strong><%= @visit.location %></strong><br>
+    <p>
+        <strong></strong><%= @visit.company || @visit.ip %></strong> visited on <%= @visit.started_at.localtime("-05:00").strftime("%m/%d/%Y at %l:%M%p") %> from <strong><%= @visit.location %></strong>
+    </p>
+    <p>
+        The session lasted <%= ((@visit.events.last.time - @visit.events.first.time) / 60).to_i %> minutes.
+    </p>
+    
 
 </div>
 <ul>
     <% @visit.attributes.each do |attr, value| %>
-        <li><strong><%= attr.capitalize %>:</strong> <%= value %>
+        <% if value %>
+            <li><p><strong><%= attr.capitalize %>:</strong> <%= value %></p></li>
+        <% end %>
     <% end %>
 </ul>
-<br>
+<br><br><br>
+<h4>Events:</h4>
+<ul>
+    <% @visit.events.each do |event| %>
+        <li><p><%= event.time.localtime("-05:00").strftime("%m/%d/%Y at %l:%M%p") %>: <strong><%= event.properties['action']%></strong> page.</p></li>
+    <% end %>
+</ul>
