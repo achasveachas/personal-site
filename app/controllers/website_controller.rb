@@ -4,8 +4,7 @@ class WebsiteController < ApplicationController
 
 
   def index
-    puts "IP CF passed through #{request.env['HTTP_CF_CONNECTING_IP']}"
-    puts "Remote IP: #{request.remote_ip}"
+
   end
 
   def contact
