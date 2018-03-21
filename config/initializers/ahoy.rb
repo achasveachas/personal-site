@@ -1,9 +1,8 @@
 class Ahoy::Store < Ahoy::DatabaseStore
-    def track_visit(data)
-        binding.pry
-        data[:ip] = request.env['HTTP_CF_CONNECTING_IP'] || request.remote_ip
-        super(data)
-    end
+    # def track_visit(data)
+    #     data[:ip] = request.env['HTTP_CF_CONNECTING_IP'] || request.remote_ip
+    #     super(data)
+    # end
 end
 
 # set to true for JavaScript tracking
