@@ -1,6 +1,8 @@
 class Ahoy::Store < Ahoy::DatabaseStore
     def track_visit(data)
-        # data[:ip] = request.env['HTTP_CF_CONNECTING_IP'] || request.remote_ip
+        puts "Data before IP insertion: #{data.to_s}"
+        data[:ip] = request.env['HTTP_CF_CONNECTING_IP'] || request.remote_ip
+        puts "Data after IP insertion: #{data.to_s}"
         super(data)
     end
 end
