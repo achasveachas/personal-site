@@ -4,7 +4,7 @@ class Admin::VisitsController < ApplicationController
   skip_before_action :track_ahoy_visit
 
   def index
-    @visits = Ahoy::Visit.joins(:events).group("ahoy_visits.id").reverse_order
+    @visits = Ahoy::Visit.joins(:events).group("ahoy_visits.id").limit(100).reverse_order
   end
 
   def show
