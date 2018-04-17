@@ -7,4 +7,12 @@ class Ahoy::Visit < ApplicationRecord
     location = [city, region, country].select{|i| i && !i.empty?}.join(', ')
   end
 
+  def next
+    self.class.find_by(id: self.id + 1)
+  end
+
+  def next
+    self.class.find_by(id: self.id - 1)
+  end
+
 end
