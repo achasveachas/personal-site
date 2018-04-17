@@ -5,6 +5,8 @@
 <br><h1>Sessions</h1>
 <ul>
     <% @visits.each do |visit| %>
-        <li><strong></strong><%= link_to (visit.company || visit.ip), admin_visit_path(visit) %></strong> visited <%= pluralize visit.events.count, 'page' %> on <%= visit.started_at.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%Y at %l:%M%p") %> from <strong><%= visit.location %></strong></li><br>
+        <li>
+            <strong><%= link_to (visit.company || visit.ip), admin_visit_path(visit) %></strong> visited <%= pluralize visit.events.count, 'page' %> on <%= visit.started_at.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%Y at %l:%M%p") %> from <strong><%= visit.location %></strong>
+        </li><br>
     <% end %>
 </ul>
