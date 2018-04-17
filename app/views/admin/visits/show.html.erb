@@ -9,6 +9,9 @@
     
 
 </div>
+<%= link_to "← Previous Session", admin_visit_path(@visit.previous) if @visit.previous %> | 
+<%= link_to "All Sessions", admin_visits_path %> | 
+<%= link_to "Next Session →", admin_visit_path(@visit.next) if @visit.next %>
 <ul>
     <% @visit.attributes.each do |attr, value| %>
         <% if value %>
