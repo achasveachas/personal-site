@@ -11,7 +11,7 @@ class Ahoy::Visit < ApplicationRecord
     self.class.find_by(id: self.id + 1)
   end
 
-  def next
+  def previous
     self.class.find_by(id: self.id - 1)
   end
 
