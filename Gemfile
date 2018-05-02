@@ -39,6 +39,8 @@ gem 'geocoder'
 # Use Ahoy for analytics
 gem 'ahoy_matey', '~> 2'
 
+# Use Pusher for chat
+gem 'pusher'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
