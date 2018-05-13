@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   
 
   namespace :admin do
+    root "visits#index"
     resources :visits, only: [:index, :show]
     resources :projects, only: [:create, :new, :edit, :update, :destroy]
   end
