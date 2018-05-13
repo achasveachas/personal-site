@@ -22,7 +22,7 @@
 <br><br><br>
 <h4>Events:</h4>
 <ul>
-    <% @visit.events.each do |event| %>
+    <% @visit.events.order(time: :asc).each do |event| %>
         <li><p><%= event.time.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%Y at %l:%M:%S%P") %>: visited the <strong><%= event.properties['action']%></strong> page.</p></li>
     <% end %>
 </ul>
