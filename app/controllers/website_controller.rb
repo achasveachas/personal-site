@@ -21,4 +21,7 @@ class WebsiteController < ApplicationController
   def resume
     send_file "app/views/website/Yechiel-Kalmenson-Resume.pdf"
   end
+
+  def magic
+  end
 end

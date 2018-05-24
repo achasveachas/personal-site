@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  root 'website#index'
 
   get 'index', to: 'website#index'
 
@@ -10,9 +12,8 @@ Rails.application.routes.draw do
 
   get 'resume', to: 'website#resume'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'magic', to: 'website#magic'
 
-  root 'website#index'
 
   get 'login', to: 'admin#login'
   get 'logout', to: 'admin#logout'
