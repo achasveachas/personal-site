@@ -132,6 +132,10 @@ input, textarea {
   width: 100%;
 }
 
+.magic, input {
+  width: auto
+}
+
 textarea {
     overflow: auto;
     vertical-align: top;
