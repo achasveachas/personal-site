@@ -10,9 +10,9 @@
     <%= label_tag "x7", "Now divide your number into 7 using only whole numbers*.How much is the remainder?" %>
     <%= number_field_tag "x7", nil, in: 0...7, size: 2, maxlength: 1, value: 0, data: {x: 7} %><br>
     <%= submit_tag "Calculate", class: "submit", onclick: "calculate()" %>
-    <br>
-    <div id="result" ></div>
-    <br><br><br>
+    <br><br>
+    <h3 id="result"></h3>
+    <br><br>
     <p>
     *For example: if your number was 10. Dividing into 3 would leave a remainder of 1,<br>dividing into 5 would leave a remainder of 0, and dividing it into 7 would leave a remainder of 3.
     </p>
