@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def block_spam
-    if ENV["HTTP_REFERER"]&.include?(".ru/")
+    if request.referer&.include?(".ru/")
       head 403
     end  
   end
