@@ -1,9 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :get_page_title, :require_admin, :is_admin?, :track_action
-  # before_action :log_session
+  before_action :block_spam
 
   private
+
+  def block_spam
+    if ENV["HTTP_REFERER"]&.include?(".ru/")
+      head 403
+    end  
+  end
 
   def get_page_title
     params[:action].capitalize
