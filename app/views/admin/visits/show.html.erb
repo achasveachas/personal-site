@@ -3,8 +3,9 @@
     <p>
         <strong></strong><%= @visit.company || @visit.ip %></strong> visited on <%= @visit.started_at.localtime("-05:00").strftime("%m/%d/%Y at %l:%M%p") %> from <strong><%= @visit.location %></strong>
     </p>
+    <% @event_length = @events.size >= 1 ? ((@events.last.time - @events.first.time) / 60).ceil : 0 %>
     <p>
-        The session lasted <%= @events.size >= 1 ? ((@events.last.time - @events.first.time) / 60).to_i : 0 %> minutes.
+        The session lasted <%= pluralize @event_length, "minute" %>.
     </p>
     
 
