@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def block_spam
-    head 403 if request.referer&.include?(".ru/") && !request.referer&.include?("yandex")
+    head 403 if request.referer&.include?(".ru") && !request.referer&.include?("yandex")
   end
 
   def get_page_title

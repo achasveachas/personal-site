@@ -9,5 +9,5 @@ end
 Ahoy.api = false
 Ahoy.visit_duration = 30.minutes
 Ahoy.exclude_method = lambda do |controller, request|
-    request.referer&.include?(".ru/") && !request.referer&.include?("yandex")
+    request.referer&.include?(".ru") && !request.referer&.include?("yandex")
 end
