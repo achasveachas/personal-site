@@ -2,7 +2,7 @@ class Ahoy::Visit < ApplicationRecord
   self.table_name = "ahoy_visits"
 
   before_create :truncate_database
-  has_many :events, class_name: "Ahoy::Event"
+  has_many :events, class_name: "Ahoy::Event", dependent: :destroy
 
   def location
     [city, region, country].select{|i| i && !i.empty?}.join(', ')
