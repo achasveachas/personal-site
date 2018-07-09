@@ -8,3 +8,4 @@ end
 # set to true for JavaScript tracking
 Ahoy.api = true
 Ahoy.server_side_visits = :when_needed
+Ahoy.user_agent_parser = :device_detector
