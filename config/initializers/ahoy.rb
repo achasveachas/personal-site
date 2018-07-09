@@ -6,5 +6,5 @@ class Ahoy::Store < Ahoy::DatabaseStore
 end
 
 # set to true for JavaScript tracking
-Ahoy.api = false
-Ahoy.visit_duration = 30.minutes
+Ahoy.api = true
+Ahoy.server_side_visits = :when_needed
