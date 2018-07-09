@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use GeoCoder for logging user's location
 gem 'geocoder'
+gem 'maxminddb'
 
 # Use Ahoy for analytics
 gem 'ahoy_matey', '~> 2'
