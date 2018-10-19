@@ -3,12 +3,12 @@
     <p>
         To get started, think of a number between 1 and 100.
     </p><br><br>
-    <%= label_tag "x3", "Divide your number into <strong>3</strong> using only whole numbers*.<br>How much is the remainder?".html_safe %>
-    <%= number_field_tag "x3", nil, in: 0...3, size: 2, maxlength: 1, value: 0, data: {x: 3} %><br> 
-    <%= label_tag "x5", "Now divide your number into <strong>5</strong> using only whole numbers*.<br>How much is the remainder?".html_safe %>
-    <%= number_field_tag "x5", nil, in: 0...5, size: 2, maxlength: 1, value: 0, data: {x: 5} %><br>
-    <%= label_tag "x7", "Now divide your number into <strong>7</strong> using only whole numbers*.<br>How much is the remainder?".html_safe %>
-    <%= number_field_tag "x7", nil, in: 0...7, size: 2, maxlength: 1, value: 0, data: {x: 7} %><br>
+    <%= label_tag "x3", "Divide your number into <strong>3</strong> using only whole numbers*.<br><br>How much is the remainder?".html_safe %>
+    <%= number_field_tag "x3", nil, in: 0...3, size: 1, maxlength: 1, value: 0, data: {x: 3} %><br><br>
+    <%= label_tag "x5", "Now divide your number into <strong>5</strong> using only whole numbers*.<br><br>How much is the remainder?".html_safe %>
+    <%= number_field_tag "x5", nil, in: 0...5, size: 1, maxlength: 1, value: 0, data: {x: 5} %><br><br>
+    <%= label_tag "x7", "Now divide your number into <strong>7</strong> using only whole numbers*.<br><br>How much is the remainder?".html_safe %>
+    <%= number_field_tag "x7", nil, in: 0...7, size: 1, maxlength: 1, value: 0, data: {x: 7} %><br><br>
     <%= submit_tag "Calculate", class: "submit", onclick: "calculate()" %>
     <br><br>
     <h3 id="result"></h3>
