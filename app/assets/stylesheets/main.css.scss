@@ -94,7 +94,7 @@ header {
 
 
 #yechiel-k-card {
-  background-image: asset_url("yechiel-k.JPG");
+  background-image: asset_url("yechiel-k.jpg");
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
@@ -202,6 +202,8 @@ input.submit {
   left: 0;
   right: 0;
   margin: 0 auto;
+  border-style: solid;
+  border-color: #256686;
   border-radius: 100px;
 }
 
