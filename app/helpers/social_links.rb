@@ -28,4 +28,8 @@ class SocialLinks
         "https://dev.to/yechielk"
     end
 
+    def self.torah_tech
+        "https://mailchi.mp/f78e9b44f28d/torahandtech"
+    end
+
 end
