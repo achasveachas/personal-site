@@ -10,7 +10,7 @@
     Quora:&nbsp;<%= link_to "Yechiel Kay", SocialLinks.quora, target: "_blank" %></h3>
     <h3>DEV.to:&nbsp;<%= link_to "yechielk", SocialLinks.devto, target: "_blank" %></h3>
     <br><br><br>
-    <%= form_with url: "https://formspree.io/form@yechiel.me", class: "form-container", data: { turbolinks: false } do |f| %>
+    <%= form_with url: "https://formspree.io/form@yechiel.me", class: "form-container", data: { remote: false } do |f| %>
         <%= f.text_field :name, placeholder: "Name:" %><br><br>
         <%= f.email_field :email, placeholder: "Email:" %><br><br>
         <%= f.text_area :message, placeholder: "Your Message:", rows: "10" %><br><br>
