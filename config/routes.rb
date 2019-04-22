@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'magic', to: 'website#magic'
 
-  get 'zoom', to: redirect 'https://pivotal.zoom.us/j/3845830623'
+  get 'zoom', to: redirect('https://pivotal.zoom.us/j/3845830623')
 
   get 'login', to: 'admin#login'
   get 'logout', to: 'admin#logout'
