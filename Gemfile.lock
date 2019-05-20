@@ -65,6 +65,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    csv (3.1.1)
     device_detector (1.0.1)
     dotenv (2.7.1)
     dotenv-rails (2.7.1)
@@ -191,6 +192,7 @@ DEPENDENCIES
   ahoy_matey (~> 2)
   byebug
   coffee-rails (~> 4.2)
+  csv
   dotenv-rails
   faker
   geocoder
