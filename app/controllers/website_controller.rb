@@ -4,7 +4,6 @@ class WebsiteController < ApplicationController
 
 
   def index
-
   end
 
   def contact
@@ -23,5 +22,9 @@ class WebsiteController < ApplicationController
   end
 
   def magic
+  end
+
+  def peretz
+    render plain: File.read('public/new-moscow-books-download-unique.txt'), layout: false
   end
 end
