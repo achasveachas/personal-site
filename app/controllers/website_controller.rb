@@ -24,8 +24,4 @@ class WebsiteController < ApplicationController
   def magic
   end
 
-  def peretz
-    @links = CSV.read('public/new-moscow-books-download-unique.txt').flatten
-    render layout: false
-  end
 end
