@@ -1,6 +1,6 @@
 <div class="vitals-text-container">
 
-  <%= form_with url: login_path, class: "form-container" do |form| %>
+  <%= form_with url: login_path, class: "form-container", local: true do |form| %>
     <%= form.label :pasword, "Please enter your password to log in:" %>
     <%= form.password_field :password %>
     <%= form.submit "Login", class: "submit" %>

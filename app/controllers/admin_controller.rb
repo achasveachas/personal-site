@@ -5,7 +5,9 @@ class AdminController < ApplicationController
 
     
     def login
-
+        if is_admin?
+            redirect_to admin_root_path
+        end
     end
 
     def new_session
@@ -16,8 +18,6 @@ class AdminController < ApplicationController
             render :login
         end
     end
-
-
 
     def logout
         session[:admin] = false
