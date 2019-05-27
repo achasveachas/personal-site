@@ -21,6 +21,10 @@ class WebsiteController < ApplicationController
     send_file "app/views/website/Yechiel-Kalmenson-Resume.pdf"
   end
 
+  def torah_tech
+    redirect_to SocialLinks.torah_tech
+  end
+
   def magic
   end
 

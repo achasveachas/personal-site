@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   # Internal Redirects
   get 'blog', to: 'website#blog'
   get 'resume', to: 'website#resume'
+  get 'torahtech', to: 'website#torah_tech'
 
   # External Redirects
   get 'zoom', to: redirect('https://pivotal.zoom.us/j/3845830623')
   get 'codeland', to: redirect('https://github.com/achasveachas/codeland')
-  get 'torahtech', to: redirect( 'https://mailchi.mp/f78e9b44f28d/torahandtech')
 
   # Admin Pages
   get 'login', to: 'admin#login'
