@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # External Redirects
   get 'zoom', to: redirect('https://pivotal.zoom.us/j/3845830623')
   get 'codeland', to: redirect('https://github.com/achasveachas/codeland')
+  get 'firstyear', to: redirect('https://leanpub.com/firstyearincode')
 
   # Admin Pages
   get 'login', to: 'admin#login'
