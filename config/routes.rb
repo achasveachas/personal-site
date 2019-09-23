@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'torahtech', to: 'website#torah_tech'
 
   # External Redirects
-  get 'zoom', to: redirect('https://pivotal.zoom.us/j/3845830623')
+  get 'zoom', to: redirect('https://pivotal.zoom.us/my/yechiel')
   get 'codeland', to: redirect('https://github.com/achasveachas/codeland')
   get 'flatiron', to: redirect('https://github.com/achasveachas/flatiron-workshop')
   get 'firstyear', to: redirect('https://leanpub.com/firstyearincode')
