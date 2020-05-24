@@ -29,7 +29,7 @@ class SocialLinks
     end
 
     def self.torah_tech
-        "https://mailchi.mp/f78e9b44f28d/torahandtech"
+        "https://torahandtech.dev/"
     end
 
 end
