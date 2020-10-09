@@ -2,23 +2,22 @@
 
   <%= form_with model: [:admin, @project], class: "form-container", local: true do |form| %>
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, id: :project_name %>
     <%= form.label :description %>
-    <%= form.text_area :description, rows: "7" %>
+    <%= form.text_area :description, rows: "7", id: :project_description %>
     <%= form.label :demo_url, "Project URL" %>
-    <%= form.text_field :demo_url %>
+    <%= form.text_field :demo_url, id: :project_demo_url %>
     <%= form.label :demo_username %>
-    <%= form.text_field :demo_username %>
+    <%= form.text_field :demo_username, id: :project_demo_username %>
     <%= form.label :demo_password %>
-    <%= form.text_field :demo_password %>
+    <%= form.text_field :demo_password, id: :project_demo_password %>
     <%= form.label :repo %>
-    <%= form.text_field :repo %>
+    <%= form.text_field :repo, id: :project_repo %>
     <%= form.label :blog_title %>
-    <%= form.text_field :blog_title %>
+    <%= form.text_field :blog_title, id: :project_blog_title %>
     <%= form.label :blog_post %>
-    <%= form.text_field :blog_post %>
+    <%= form.text_field :blog_post, id: :project_blog_post %>
     <%= form.submit class: "submit" %>
   <% end %>
-  
 
 </div>
