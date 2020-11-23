@@ -2,7 +2,7 @@
     <h4><%= link_to "New Project", new_admin_project_path %></h4>
 </div>
 <div class="vitals-text-container">
-    <h4><%= link_to "Reset Switch", deadman_reset_path %></h4>
+    <h4><%= link_to "Reset Switch", deadman_reset_path %> <small>(Last reset <%= time_ago_in_words Deadman.last_reset %> ago)</small></h4>
 </div>
 <br><h1>Sessions</h1>
 <ul>

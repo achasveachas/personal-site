@@ -4,4 +4,7 @@ class Deadman < ApplicationRecord
         create
     end
 
+    def self.last_reset
+        last.created_at
+    end
 end
