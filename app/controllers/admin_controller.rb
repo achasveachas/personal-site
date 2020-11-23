@@ -23,4 +23,13 @@ class AdminController < ApplicationController
         session[:admin] = false
         redirect_to root_path
     end
+
+    def reset
+        if is_admin?
+            Deadman.reset
+            redirect_to admin_root_path
+        else
+            redirect_to login_path
+        end
+    end
 end

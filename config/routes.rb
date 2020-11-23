@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'login', to: 'admin#login'
   get 'logout', to: 'admin#logout'
   post 'login', to: 'admin#new_session'
+  get 'deadman/reset', to: 'admin#reset'
   namespace :admin do
     root "visits#index"
     resources :visits, only: [:index, :show]
