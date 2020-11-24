@@ -5,6 +5,14 @@ class Deadman < ApplicationRecord
     end
 
     def self.last_reset
-        last.created_at
+        last&.created_at || Time.now
+    end
+
+    def self.triggered
+        create(triggered: true)
+    end
+
+    def self.triggered?
+        last&.triggered?
     end
 end

@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20201123020729) do
   end
 
   create_table "deadmen", force: :cascade do |t|
+    t.boolean "triggered", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,10 +1,15 @@
 desc 'deadman\'s switch'
 
 task :deadman => :environment do
-    # TODO: change minutes to seconds! Very important!!!
-    if 7.minutes.ago < Deadman.last_reset
+    
+    abort if Deadman.triggered?
+
+    if 7.days.ago < Deadman.last_reset
         puts "Still alive B\"H!"
     else
+        puts "Executing Deadman Switch!"
+
+        farewell_message = "When one passes away there accompany them neither gold nor silver, nor precious stones nor pearls, but Torah and good deeds alone.\n\n -Pirkei Avot, Chapter 6, Mishnah 9"
         client = Twitter::REST::Client.new do |config|
             config.consumer_key        = ENV['TWITTER_API_KEY']
             config.consumer_secret     = ENV['TWITTER_API_SECRET']
@@ -17,12 +22,13 @@ task :deadman => :environment do
                 client.destroy_status(tweets)
                 tweets = client.user_timeline(count: 200)
             end
+            client.update(farewell_message)
         rescue Twitter::Error::TooManyRequests => error
             puts "Hit rate limit, waiting until:"
             puts error.rate_limit.reset_in
             sleep error.rate_limit.reset_in + 1
             retry
         end
-
+        Deadman.triggered
     end
 end
