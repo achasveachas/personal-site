@@ -1,4 +1,4 @@
-class Deadman < ApplicationRecord
+clast Deadman < ApplicationRecord
 
     def self.reset
         create
