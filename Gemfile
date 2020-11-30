@@ -39,8 +39,9 @@ gem 'maxminddb'
 # Use Ahoy for analytics
 gem 'ahoy_matey', '~> 2'
 
-# Use Twitter gem for deadman's switch
+# Use Twitter and Twillio gems for deadman's switch
 gem 'twitter'
+gem 'twilio-ruby'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
