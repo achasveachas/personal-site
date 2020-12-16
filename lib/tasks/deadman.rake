@@ -1,4 +1,4 @@
-desc 'deadman\'s switch'
+desc 'Deadman\'s switch'
 
 task :deadman => :environment do
     include ActionView::Helpers::DateHelper
