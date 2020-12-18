@@ -13,6 +13,6 @@ class Deadman < ApplicationRecord
     end
 
     def self.triggered?
-        last&.triggered?
+        where(triggered: true).size > 0
     end
 end
