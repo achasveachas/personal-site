@@ -4,6 +4,23 @@
 <div class="vitals-text-container">
     <h4><%= link_to "Reset Switch", deadman_reset_path %> <small>(Last reset <%= time_ago_in_words Deadman.last_reset %> ago)</small></h4>
 </div>
+<div class="vitals-text-container">
+  <%= form_with model: BlogPost.new, class: "form-container", local: true do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= form.label :slug %>
+    <%= form.text_field :slug %><br>
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+    <%= form.submit class: "submit" %>
+  <% end %>
+</div>
+<br><h1>Blog Posts</h1>
+<ul>
+    <% @blogposts.each do |post| %>
+        <li><a href=<%= post.url %> target="_blank" ><%= post.slug %></a>: <%= post.title %></li>
+    <% end %>
+</ul>
 <br><h1>Sessions</h1>
 <ul>
     <% @visits.each do |visit| %>

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'website#contact'
   get 'magic', to: 'website#magic'
   get 'projects', to: 'website#projects'
+  get 'blog/:slug', to: 'website#blog_post'
+  post 'blog_posts', to: 'blog_post#create'
 
   # Internal Redirects
   get 'blog', to: 'website#blog'

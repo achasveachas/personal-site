@@ -5,6 +5,7 @@ class Admin::VisitsController < ApplicationController
 
   def index
     @visits = Ahoy::Visit.joins(:events).group("ahoy_visits.id").limit(100).reverse_order
+    @blogposts = BlogPost.all
   end
 
   def show

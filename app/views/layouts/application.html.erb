@@ -100,4 +100,9 @@
       </p>
     </footer>
   </body>
+  <% flash.each do |type, msg| %>
+    <script>
+      alert("\"<%= msg %>\"")
+    </script>
+  <% end %>
 </html>

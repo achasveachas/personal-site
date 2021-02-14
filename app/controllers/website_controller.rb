@@ -17,6 +17,16 @@ class WebsiteController < ApplicationController
     redirect_to SocialLinks.blog
   end
 
+  def blog_post
+    @blog_post = BlogPost.find_by(slug: params[:slug])
+    if @blog_post
+      redirect_to @blog_post.url
+    else
+      flash[:error] = "Sorry, there is no blog post with the #{params[:slug]} slug."
+      redirect_to root_path
+    end
+  end
+
   def resume
     send_file "app/views/website/Yechiel-Kalmenson-Resume.pdf"
   end
