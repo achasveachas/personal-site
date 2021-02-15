@@ -18,7 +18,11 @@
 <br><h1>Blog Posts</h1>
 <ul>
     <% @blogposts.each do |post| %>
-        <li><a href=<%= post.url %> target="_blank" ><%= post.slug %></a>: <%= post.title %></li>
+        <% full_url = "https://yechiel.me/blog/#{post.slug}" %>
+        <li>
+            <a href=<%= post.url %> target="_blank" ><%= post.title %></a>: <span id=<%= post.id %> ><%= full_url %></span>
+            <button onclick="copyToClipboard('<%= full_url %>');" >Copy</button>
+        </li>
     <% end %>
 </ul>
 <br><h1>Sessions</h1>
@@ -29,3 +33,16 @@
         </li><br>
     <% end %>
 </ul>
+
+<script>
+    function copyToClipboard(text) {
+        var textarea = document.createElement("textarea");
+        textarea.textContent = text;
+        textarea.style.position = "fixed"; // Prevent scrolling to bottom of page in MS Edge.
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy"); 
+
+        document.body.removeChild(textarea);
+    }
+</script>
