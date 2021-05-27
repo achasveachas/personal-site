@@ -32,4 +32,7 @@ class SocialLinks
         "https://torahandtech.dev/"
     end
 
+    def self.polywork
+        "https://www.polywork.com/yechielk"
+    end
 end
