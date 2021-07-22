@@ -1,14 +1,12 @@
 console.log("Thanks for stopping by!\nTo get in touch:\nWebsite: www.yechiel.me\nEmail: holler@yechiel.me\nBlog: blog.yechiel.me\nTwitter: @yechielk\nGitHub: achasveachas\nLinkdIn: www.linkedin.com/in/yechiel-k\n\n\nStop by https://yechiel.me/magic for some cool stuff")
 
 if (window.location.search) {
-    const company = decodeURI(window.location.search.split("=")[1])
 
-    let message
+    const urlParams = new URLSearchParams(window.location.search);
 
-    if(company === "resume") {
-        message = "Hi there,\n\nThanks for taking the time to look at my resume!\n\nFeel free to look around. The Projects page contains some of the stuff I built that didn't make it into the resume.\n\nThanks for stopping by, and if you want to get in touch please head over to the Contact page.\nYechiel"
-    } else {
+    if (urlParams.has("company")) {
+        const company = urlParams.get("company")
         message = "Hello " + company + "!\n\nYou should totally hire Yechiel, I mean he's totally awesome!\n\nBut don't take my word for it, I'm just a simple browser, instead why don't you head over to the Projects page and take a look at some of the cool stuff he's made (or the resume if you want the boring version ;)\n\nSo waddaya say?"
+        setTimeout(() => alert(message), 500)
     }
-    setTimeout(() => alert(message), 500)
 }
