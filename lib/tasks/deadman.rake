@@ -24,19 +24,9 @@ task :deadman => :environment do
             config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
             config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
         end
-        begin
-            tweets = client.user_timeline(count: 200)
-            while !tweets.empty?
-                client.destroy_status(tweets)
-                tweets = client.user_timeline(count: 200)
-            end
-            client.update(farewell_message)
-        rescue Twitter::Error::TooManyRequests => error
-            puts "Hit rate limit, waiting until:"
-            puts error.rate_limit.reset_in
-            sleep error.rate_limit.reset_in + 1
-            retry
-        end
+
+        client.update(farewell_message)
+        
         Deadman.triggered
     end
 end
