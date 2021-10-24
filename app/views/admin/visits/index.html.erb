@@ -22,6 +22,7 @@
         <li>
             <a href=<%= post.url %> target="_blank" ><%= post.title %></a>: <span id=<%= post.id %> ><%= full_url %></span>
             <button onclick="copyToClipboard('<%= full_url %>');" >Copy</button>
+            <button><%= link_to "Delete", blog_post_path(post), method: :delete %></button>
         </li>
     <% end %>
 </ul>
