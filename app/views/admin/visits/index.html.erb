@@ -18,7 +18,7 @@
 <br><h1>Blog Posts</h1>
 <ul>
     <% @blogposts.each do |post| %>
-        <% full_url = "https://yechiel.me/blog/#{post.slug}" %>
+        <% full_url = "#{request.base_url}/url/#{post.slug}" %>
         <li>
             <a href=<%= post.url %> target="_blank" ><%= post.title %></a>: <span id=<%= post.id %> ><%= full_url %></span>
             <button onclick="copyToClipboard('<%= full_url %>');" >Copy</button>

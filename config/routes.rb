@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   get 'magic', to: 'website#magic'
   get 'projects', to: 'website#projects'
   get 'blog/:slug', to: 'website#blog_post'
-  #post 'blog_posts', to: 'blog_post#create'
-  #delete 'blog/:slug', to: 'blog_post#delete'
+  get 'url/:slug', to: 'website#blog_post'
   resources :blog_posts, only: [:create, :destroy]
 
   # Internal Redirects
