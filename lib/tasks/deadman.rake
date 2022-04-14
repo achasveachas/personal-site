@@ -17,7 +17,7 @@ task :deadman => :environment do
     else
         puts "Executing Deadman Switch!"
 
-        farewell_message = "When one passes away there accompany them neither gold nor silver, nor precious stones nor pearls, but Torah and good deeds alone.\n\n -Pirkei Avot, Chapter 6, Mishnah 9"
+        farewell_message = "When one passes away they are not accompanied by their gold or silver, nor precious stones or pearls, but by Torah and good deeds alone.\n\n -Pirkei Avot, Chapter 6, Mishnah 9"
         client = Twitter::REST::Client.new do |config|
             config.consumer_key        = ENV['TWITTER_API_KEY']
             config.consumer_secret     = ENV['TWITTER_API_SECRET']
