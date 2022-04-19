@@ -17,6 +17,12 @@ task :deadman => :environment do
     else
         puts "Executing Deadman Switch!"
 
+        message_body = "Hi Shayn Shayn, this is a message from Chilik. I prepared a document with information that may be important. You can access it at: https://yechiel.me/url/shayn, the password is the same as always (you may need to open it from a computer). Love you!"
+        twilio_client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_ACCOUNT_TOKEN'])
+        twilio_client.messages.create(from: ENV['TWILIO_PHONE_NUMBER'], to: ENV['SHAYNAS_NUMBER'], body: message_body)
+        sleep 5.minutes
+        twilio_client.messages.create(from: ENV['TWILIO_PHONE_NUMBER'], to: ENV['SHAYNAS_NUMBER'], body: ("but " * 40).capitalize)
+
         farewell_message = "When one passes away they are not accompanied by their gold or silver, nor precious stones or pearls, but by Torah and good deeds alone.\n\n -Pirkei Avot, Chapter 6, Mishnah 9"
         client = Twitter::REST::Client.new do |config|
             config.consumer_key        = ENV['TWITTER_API_KEY']
