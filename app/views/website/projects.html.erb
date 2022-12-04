@@ -17,9 +17,9 @@
                         <%= project.description.html_safe %><br><br>
                         <% if !project.demo_url.empty? %>
                             <strong>Project URL</strong> <%= link_to project.name, project.demo_url, target: "_blank" %><br>
-                        <% end %>
-                        <% if !project.demo_username.empty? && !project.demo_password.empty? %>
-                            <small>(<strong>Demo Username:</strong> <%= project.demo_username %>, <strong>Password:</strong> <%= project.demo_password %>)</small><br>
+                            <% if !project.demo_username.empty? && !project.demo_password.empty? %>
+                                <small>(<strong>Demo Username:</strong> <%= project.demo_username %>, <strong>Password:</strong> <%= project.demo_password %>)</small><br>
+                            <% end %>
                         <% end %>
                         <% if !project.repo.empty? %>
                             <strong>GitHub Repo:</strong> <%= link_to project.repo.split("/")[-1], project.repo, target: "_blank" %> <br>
