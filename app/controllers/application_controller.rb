@@ -27,6 +27,6 @@ class ApplicationController < ActionController::Base
 
   def track_action
     ahoy.track "Ran action", request.path_parameters
-    current_visit.update_attributes(company: params[:company]) if params[:company]
+    current_visit.update(company: params[:company]) if params[:company]
   end
 end
