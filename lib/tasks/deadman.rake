@@ -5,14 +5,14 @@ task :deadman => :environment do
     
     abort if Deadman.triggered?
 
-    if 3.days.ago >= Deadman.last_reset
-        time_to_trigger = time_ago_in_words(Deadman.last_reset + 10.days)
+    if 20.days.ago >= Deadman.last_reset
+        time_to_trigger = time_ago_in_words(Deadman.last_reset + 30.days)
         message_body = "Your deadman switch will trigger in #{time_to_trigger}, please log in to your account and reset it."
         twilio_client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_ACCOUNT_TOKEN'])
         twilio_client.messages.create(from: ENV['TWILIO_PHONE_NUMBER'], to: ENV['PHONE_NUMBER'], body: message_body)
     end
 
-    if 10.days.ago < Deadman.last_reset
+    if 30.days.ago < Deadman.last_reset
         puts "Still alive B\"H!"
     else
         puts "Executing Deadman Switch!"
