@@ -6,7 +6,7 @@
     Email:&nbsp;<%= mail_to SocialLinks.email %></h3>
     <h3 class="profile-contact">LinkedIn:&nbsp;<%= link_to "Yechiel Kalmenson", SocialLinks.linkedin, target: "_blank" %> | 
     Github:&nbsp;<%= link_to "achasveachas", SocialLinks.github, target: "_blank" %></h3>
-    <h3 class="profile-contact">Twitter:&nbsp;<%= link_to "@yechielk", SocialLinks.twitter, target: "_blank" %> | 
+    <h3 class="profile-contact">Bluesky:&nbsp;<%= link_to "@yechiel.me", SocialLinks.bluesky, target: "_blank" %> | 
     DEV.to:&nbsp;<%= link_to "yechielk", SocialLinks.devto, target: "_blank" %></h3>
     <br><br><br>
     <%= form_with url: "https://formspree.io/f/xrgoyvqp", class: "form-container", data: { remote: false } do |f| %>
@@ -19,3 +19,4 @@
         <%= f.submit "Send", class: "submit" %>
     <% end %>
 </div>
+
