@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1'
+gem 'rails', '~> 8.0'
 # Use pg as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -37,7 +37,7 @@ gem 'geocoder'
 gem 'maxminddb'
 
 # Use Ahoy for analytics
-gem 'ahoy_matey', '~> 2'
+gem 'ahoy_matey', '~> 5.3'
 
 # Use Twitter and Twillio gems for deadman's switch
 gem 'twitter'
