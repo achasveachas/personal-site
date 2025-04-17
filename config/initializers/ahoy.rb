@@ -5,6 +5,8 @@ class Ahoy::Store < Ahoy::DatabaseStore
     end
 end
 
+Ahoy.geocode = true
+
 # set to true for JavaScript tracking
 Ahoy.api = true
 Ahoy.server_side_visits = :when_needed
