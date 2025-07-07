@@ -4,10 +4,6 @@ class SocialLinks
         "contact@yechiel.me"
     end
 
-    def self.bluesky
-        "https://bsky.app/profile/yechiel.me"
-    end
-
     def self.twitter
         "https://twitter.com/yechielk"
     end

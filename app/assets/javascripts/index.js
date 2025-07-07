@@ -1,4 +1,4 @@
-console.log("Thanks for stopping by!\nTo get in touch:\nWebsite: www.yechiel.me\nEmail: holler@yechiel.me\nBlog: blog.yechiel.me\nBluesky: @yechiel.me\nGitHub: achasveachas\nLinkdIn: www.linkedin.com/in/yechiel-k\n\n\nStop by https://yechiel.me/magic for some cool stuff")
+console.log("Thanks for stopping by!\nTo get in touch:\nWebsite: www.yechiel.me\nEmail: holler@yechiel.me\nBlog: blog.yechiel.me\nGitHub: achasveachas\nLinkdIn: www.linkedin.com/in/yechiel-k\n\n\nStop by https://yechiel.me/magic for some cool stuff")
 
 if (window.location.search) {
 
