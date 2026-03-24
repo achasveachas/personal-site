@@ -248,6 +248,10 @@ input.submit {
   padding-bottom: 20px;
   margin-bottom: 20px;
   margin-top: 40px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .description-holder {
