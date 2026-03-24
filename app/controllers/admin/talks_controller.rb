@@ -31,13 +31,20 @@ class Admin::TalksController < ApplicationController
 
   def destroy
     @talk = Talk.find_by(id: params[:id])
-    @talk.destroy
-    redirect_to talks_path
+    if @talk
+      @talk.destroy
+      redirect_to talks_path
+    else
+      redirect_to talks_path, alert: "Talk not found"
+    end
   end
 
   private
 
   def talk_params
-    params.require(:talk).permit(:title, :description, :youtube_link, :blog_post_link, :conference_name, :talk_date, :picture_url)
+    params.require(:talk).permit(
+      :title, :description, :youtube_link, :blog_post_link,
+      :conference_name, :talk_date, :picture_url
+    )
   end
 end

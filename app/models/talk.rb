@@ -3,6 +3,9 @@ class Talk < ApplicationRecord
   validates :description, presence: true
   validates :conference_name, presence: true
   validates :talk_date, presence: true
+  validates :youtube_link, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
+  validates :blog_post_link, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
+  validates :picture_url, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
   
   # Either youtube_link OR picture_url must be present
   validate :must_have_video_or_picture
@@ -36,9 +39,10 @@ class Talk < ApplicationRecord
   def extract_youtube_thumbnail
     return nil unless youtube_link.present?
     
-    if youtube_link.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
-      video_id = $1
-      "https://img.youtube.com/vi/#{video_id}/maxresdefault.jpg"
-    end
+    match = youtube_link.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/)
+    return nil unless match
+    
+    video_id = match[1]
+    "https://img.youtube.com/vi/#{video_id}/maxresdefault.jpg"
   end
 end

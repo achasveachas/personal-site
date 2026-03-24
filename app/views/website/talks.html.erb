@@ -34,7 +34,7 @@
                 
                 <div class="description-holder">
                     <p>
-                        <%= talk.description.html_safe %><br><br>
+                        <%= simple_format(h(talk.description)) %><br>
                         <% if talk.blog_post_link.present? %>
                             <strong>Read more:</strong> <%= link_to "Blog Post", talk.blog_post_link, target: "_blank" %><br>
                         <% end %>
