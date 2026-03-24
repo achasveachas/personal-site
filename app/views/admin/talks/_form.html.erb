@@ -13,6 +13,8 @@
     <%= form.text_field :youtube_link, id: :talk_youtube_link, placeholder: "YouTube URL" %><br>
     <%= form.label :picture_url %>
     <%= form.text_field :picture_url, id: :talk_picture_url, placeholder: "Picture URL (for non-YouTube talks)" %><br>
+    <%= form.label :alt_text, "Alt text for image (accessibility)" %>
+    <%= form.text_area :alt_text, rows: "2", id: :talk_alt_text, placeholder: "Describe the image for screen readers (optional - will use title if empty)" %><br>
     <%= form.label :blog_post_link %>
     <%= form.text_field :blog_post_link, id: :talk_blog_post_link, placeholder: "Blog post URL (optional)" %><br>
     <%= form.submit class: "submit" %>

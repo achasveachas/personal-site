@@ -20,6 +20,10 @@ class Talk < ApplicationRecord
     end
   end
 
+  def alt_text_or_title
+    alt_text.present? ? alt_text : title
+  end
+
   def clickable?
     youtube_link.present?
   end

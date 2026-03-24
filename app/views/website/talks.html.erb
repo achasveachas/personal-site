@@ -18,16 +18,25 @@
                 <% if talk.thumbnail_url.present? %>
                     <div style="text-align: center; margin: 20px 0;">
                         <% if talk.clickable? %>
-                            <%= link_to talk.youtube_link, target: "_blank", class: "video-thumbnail-link" do %>
-                                <div class="video-thumbnail-container">
-                                    <img src="<%= talk.thumbnail_url %>" alt="<%= talk.title %>" class="talk-thumbnail" />
-                                    <div class="play-button-overlay">
-                                        <div class="play-button">▶</div>
+                            <%= link_to talk.youtube_link, 
+                                target: "_blank", 
+                                class: "video-thumbnail-link",
+                                'aria-label': "Watch video: #{talk.title}",
+                                title: "Watch video: #{talk.title}" do %>
+                                <div class="video-thumbnail-container" role="img" aria-label="<%= talk.alt_text_or_title %>">
+                                    <img src="<%= talk.thumbnail_url %>" 
+                                         alt="<%= talk.alt_text_or_title %>" 
+                                         class="talk-thumbnail" />
+                                    <div class="play-button-overlay" role="button" aria-label="Play video">
+                                        <div class="play-button" aria-hidden="true">▶</div>
                                     </div>
                                 </div>
                             <% end %>
                         <% else %>
-                            <img src="<%= talk.thumbnail_url %>" alt="<%= talk.title %>" class="talk-thumbnail" />
+                            <img src="<%= talk.thumbnail_url %>" 
+                                 alt="<%= talk.alt_text_or_title %>" 
+                                 class="talk-thumbnail" 
+                                 role="img" />
                         <% end %>
                     </div>
                 <% end %>
