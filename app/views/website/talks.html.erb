@@ -1,0 +1,49 @@
+<div class="vitals-text-container">
+    <h1 class="project-header">Conference Talks & Presentations</h1><br>
+    <h4 class="project-subtitle">Sharing knowledge and experiences with the community.</h4>
+    <h4><%= link_to "New Talk", new_admin_talk_path if is_admin? %></h4>
+</div>
+
+<div class="details-container">
+    <% @talks.each do |talk| %>
+        <div class="experience-block details-block">
+            <div class="experience-content content-holder">
+                <div class="title-holder">
+                    <h3><%= talk.title %></h3>
+                    <p style="font-size: 14px; color: #999; margin-top: 5px;">
+                        <%= talk.conference_name %> • <%= talk.talk_date.strftime("%B %Y") %>
+                    </p>
+                </div>
+                
+                <% if talk.thumbnail_url.present? %>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <% if talk.clickable? %>
+                            <%= link_to talk.youtube_link, target: "_blank" do %>
+                                <img src="<%= talk.thumbnail_url %>" alt="<%= talk.title %>" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+                            <% end %>
+                        <% else %>
+                            <img src="<%= talk.thumbnail_url %>" alt="<%= talk.title %>" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+                        <% end %>
+                    </div>
+                <% end %>
+                
+                <div class="description-holder">
+                    <p>
+                        <%= talk.description.html_safe %><br><br>
+                        <% if talk.youtube_link.present? %>
+                            <strong>Watch:</strong> <%= link_to "YouTube Video", talk.youtube_link, target: "_blank" %><br>
+                        <% end %>
+                        <% if talk.blog_post_link.present? %>
+                            <strong>Read more:</strong> <%= link_to "Blog Post", talk.blog_post_link, target: "_blank" %><br>
+                        <% end %>
+                        <% if is_admin? %>
+                            ___
+                            <br>
+                            <%= link_to "Edit", edit_admin_talk_path(talk) %>
+                        <% end %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
