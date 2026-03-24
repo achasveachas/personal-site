@@ -3,7 +3,6 @@
 
 *, *:before, *:after {
   box-sizing: border-box;
-  /*border: 1px solid red;*/
 }
 
 html {
@@ -36,11 +35,6 @@ a:visited {
 }
 
 a:hover {
-  text-decoration: none;
-  color: #555;
-}
-
-a.curent {
   text-decoration: none;
   color: #555;
 }
@@ -80,10 +74,6 @@ header {
   margin-top: 100px;
 }
 
-
-
-
-
 #yechiel-k-cover {
   background-image: asset_url("fcm6zBK.jpg");
   -webkit-transition: 0.2s;
@@ -91,7 +81,6 @@ header {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
-
 
 #yechiel-k-card {
   background-image: asset_url("yechiel-k-ac.jpg");
@@ -122,6 +111,7 @@ header {
 form input, form textarea {
   margin-bottom: 0.5em;
 }
+
 input, textarea {
   font-size: 0.8em;
   font-family: 'proxima-nova-soft', sans-serif;
@@ -132,13 +122,9 @@ input, textarea {
   width: 100%;
 }
 
-.magic, input {
-  width: auto
-}
-
 textarea {
-    overflow: auto;
-    vertical-align: top;
+  overflow: auto;
+  vertical-align: top;
 }
 
 button, input {
@@ -161,9 +147,6 @@ input.submit {
 
 /* PROFILE.HTML STYLES
 ======================== */
-.profile .header {
-  margin: 0;
-}
 
 .profile-banner {
   height: 350px;
@@ -303,102 +286,29 @@ input.submit {
 
 /* MEDIA QUERIES
 ======================== */
-@media only screen and (min-width: 480px) {
-  /* index.html */
-  .learn-logo {
-    left: 10%;
-    margin: 0;
-  }
-  .roster-text-container h1 {
-    font-size: 32px;
-  }
-  .roster-text-container h2 {
-    font-size: 32px;
-    width: 80%;
-  }
-  .student-card:hover .view-profile-div {
-    display: block;
-    z-index: 900;
-  }
-  .footer {
-    height: 85px;
-  }
-  .footer p {
-    font-size: 0.5em;
-  }
-  .made-with-love {
-    top: 60px;
-  }
-
-  /* profile.html */
-  .profile-quote {
-    width: 80%;
-  }
-}
-
 @media only screen and (max-width: 480px) {
   nav {
     font-size: 0.75em
   }
 }
 
-@media only screen and (min-width: 700px) {
-  /* index.html */
-  .roster-text-container h1 {
-    font-size: 40px;
+@media only screen and (min-width: 480px) {
+  .footer {
+    height: 85px;
   }
-  .roster-text-container h2 {
-    font-size: 40px;
+
+  .profile-quote {
     width: 80%;
   }
-  .roster-cards-container {
-    width: 650px;
+}
 
-  }
-  .student-card {
-    display: inline-block;
-    width: 305px;
-  }
-  .student-card:nth-of-type(odd) {
-    margin-right: 35px;
-  }
-
-  /* profile.html */
-
+@media only screen and (min-width: 700px) {
   .profile-quote {
     width: 70%;
   }
 }
 
 @media only screen and (min-width: 1050px) {
-
-  /* index.html */
-  .roster .header {
-    margin-bottom: 150px;
-  }
-  .roster-text-container h1 {
-    font-size: 48px;
-  }
-  .roster-text-container h2 {
-    font-size: 48px;
-    width: 70%;
-  }
-  .roster-cards-container {
-    width: 1000px;
-  }
-  .student-card:nth-of-type(3n) {
-    margin-right: 0;
-  }
-  .student-card:not(:nth-of-type(3n)) {
-    margin-right: 38px;
-  }
-
-  /* profile.html */
-
-  .profile-header {
-    margin-bottom: 0;
-  }
-
   .profile-quote {
     width: 40%;
   }
@@ -422,7 +332,6 @@ input.submit {
     width: 80%;
     margin: 0 auto;
   }
-
 }
 
 
