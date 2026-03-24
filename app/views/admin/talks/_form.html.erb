@@ -1,0 +1,21 @@
+<div class="vitals-text-container">
+
+  <%= form_with model: [:admin, @talk], class: "form-container", local: true do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :talk_title %><br>
+    <%= form.label :conference_name %>
+    <%= form.text_field :conference_name, id: :talk_conference_name %><br>
+    <%= form.label :talk_date %>
+    <%= form.date_field :talk_date, id: :talk_date %><br>
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: "5", id: :talk_description %><br>
+    <%= form.label :youtube_link %>
+    <%= form.text_field :youtube_link, id: :talk_youtube_link, placeholder: "YouTube URL" %><br>
+    <%= form.label :picture_url %>
+    <%= form.text_field :picture_url, id: :talk_picture_url, placeholder: "Picture URL (for non-YouTube talks)" %><br>
+    <%= form.label :blog_post_link %>
+    <%= form.text_field :blog_post_link, id: :talk_blog_post_link, placeholder: "Blog post URL (optional)" %><br>
+    <%= form.submit class: "submit" %>
+  <% end %>
+
+</div>
