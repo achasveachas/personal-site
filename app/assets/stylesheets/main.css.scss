@@ -288,6 +288,52 @@ input.submit {
   border-top: 1px dotted #85929d;
 }
 
+/* TALK THUMBNAIL STYLES
+======================== */
+
+.talk-thumbnail {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.video-thumbnail-container {
+  position: relative;
+  display: inline-block;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.8);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.play-button {
+  color: white;
+  font-size: 24px;
+  margin-left: 4px; /* Offset to center the triangle visually */
+}
+
+.video-thumbnail-link:hover .talk-thumbnail {
+  transform: scale(1.05);
+}
+
+.video-thumbnail-link:hover .play-button-overlay {
+  background-color: rgba(255, 0, 0, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
 /* MEDIA QUERIES
 ======================== */
 @media only screen and (max-width: 480px) {
