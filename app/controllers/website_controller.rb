@@ -13,6 +13,10 @@ class WebsiteController < ApplicationController
     @projects = Project.all.reverse_order
   end
 
+  def talks
+    @talks = Talk.ordered
+  end
+
   def blog
     redirect_to SocialLinks.blog
   end
