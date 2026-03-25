@@ -84,6 +84,6 @@ class Talk < ApplicationRecord
     return nil unless match
     
     video_id = match[1]
-    "https://img.youtube.com/vi/#{video_id}/maxresdefault.jpg"
+    "https://img.youtube.com/vi/#{video_id}/hqdefault.jpg"
   end
 end
