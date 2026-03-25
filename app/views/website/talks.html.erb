@@ -1,0 +1,61 @@
+<div class="vitals-text-container">
+    <h1 class="project-header">Conference Talks & Presentations</h1><br>
+    <h4 class="project-subtitle">I love speaking about ethics in technology, mentorship, Ruby on Rails, and building inclusive tech communities.<br>
+        <%= link_to "Get in touch", contact_path %> if you'd like me to present at your event!</h4>
+    <h4><%= link_to "New Talk", new_admin_talk_path if is_admin? %></h4>
+</div>
+
+<div class="details-container">
+    <% @talks.each do |talk| %>
+        <div class="experience-block details-block">
+            <div class="experience-content content-holder">
+                <div class="title-holder">
+                    <h3><%= talk.title %></h3>
+                    <p style="font-size: 14px; color: #999; margin-top: 5px;">
+                        <%= talk.conference_name %> • <%= talk.talk_date.strftime("%B %Y") %>
+                    </p>
+                </div>
+                
+                <% if talk.thumbnail_url.present? %>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <% if talk.clickable? %>
+                            <%= link_to talk.youtube_link, 
+                                target: "_blank", 
+                                class: "video-thumbnail-link",
+                                'aria-label': "Watch video: #{talk.title}",
+                                title: "Watch video: #{talk.title}" do %>
+                                <div class="video-thumbnail-container" role="img" aria-label="<%= talk.alt_text_or_title %>">
+                                    <img src="<%= talk.safe_thumbnail_url %>" 
+                                         alt="<%= talk.alt_text_or_title %>" 
+                                         class="talk-thumbnail" />
+                                    <div class="play-button-overlay" role="button" aria-label="Play video">
+                                        <div class="play-button" aria-hidden="true">▶</div>
+                                    </div>
+                                </div>
+                            <% end %>
+                        <% else %>
+                            <img src="<%= talk.safe_thumbnail_url %>" 
+                                 alt="<%= talk.alt_text_or_title %>" 
+                                 class="talk-thumbnail" 
+                                 role="img" />
+                        <% end %>
+                    </div>
+                <% end %>
+                
+                <div class="description-holder">
+                    <p>
+                        <%= simple_format(h(talk.description)) %><br>
+                        <% if talk.blog_post_link.present? %>
+                            <strong>Read more:</strong> <%= link_to talk.blog_post_title, talk.blog_post_link, target: "_blank" %><br>
+                        <% end %>
+                        <% if is_admin? %>
+                            ___
+                            <br>
+                            <%= link_to "Edit", edit_admin_talk_path(talk) %>
+                        <% end %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>

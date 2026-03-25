@@ -1,0 +1,9 @@
+<div class="vitals-text-container">
+
+    <h2>Edit Talk</h2>
+
+    <%= render 'form' %>
+    <%= button_to "Delete", admin_talk_path(@talk), method: :delete, class: "submit", data: {confirm: "Are you sure you want to delete this?"} %>
+
+
+</div>

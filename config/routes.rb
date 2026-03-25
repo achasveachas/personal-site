@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'website#contact'
   get 'magic', to: 'website#magic'
   get 'projects', to: 'website#projects'
+  get 'talks', to: 'website#talks'
   get 'blog/:slug', to: 'website#blog_post'
   get 'url/:slug', to: 'website#blog_post'
   resources :blog_posts, only: [:create, :destroy]
@@ -31,5 +32,6 @@ Rails.application.routes.draw do
     root "visits#index"
     resources :visits, only: [:index, :show]
     resources :projects, only: [:create, :new, :edit, :update, :destroy]
+    resources :talks, only: [:create, :new, :edit, :update, :destroy]
   end
 end
