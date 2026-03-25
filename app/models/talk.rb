@@ -5,7 +5,10 @@ class Talk < ApplicationRecord
   validates :talk_date, presence: true
   validates :youtube_link, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
   validates :blog_post_link, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
-  validates :picture_url, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
+  validates :picture_url, format: { 
+    with: /\A(https?:\/\/.*|\/.*|[^\/].*)\z/i, 
+    message: "must be a valid URL or relative path" 
+  }, allow_blank: true
   
   # Either youtube_link OR picture_url must be present
   validate :must_have_video_or_picture
@@ -20,6 +23,10 @@ class Talk < ApplicationRecord
     else
       picture_url
     end
+  end
+
+  def is_asset_path?
+    picture_url.present? && !picture_url.match(/\Ahttps?:\/\//)
   end
 
   def alt_text_or_title
