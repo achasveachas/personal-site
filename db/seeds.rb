@@ -19,7 +19,8 @@ talks_data = [
     conference_name: "RailsConf 2024",
     talk_date: Date.new(2024, 5, 15),
     youtube_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    blog_post_link: "https://blog.yechiel.me/building-modern-rails"
+    blog_post_link: "https://blog.yechiel.me/building-modern-rails",
+    blog_post_title: "Best Practices for Modern Rails Development"
   },
   {
     title: "The Art of Code Review",
@@ -27,7 +28,8 @@ talks_data = [
     conference_name: "Tech Leadership Summit",
     talk_date: Date.new(2024, 3, 10),
     youtube_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    blog_post_link: "https://blog.yechiel.me/art-of-code-review"
+    blog_post_link: "https://blog.yechiel.me/art-of-code-review",
+    blog_post_title: "How to Master Code Reviews for Better Teams"
   },
   {
     title: "From Bootcamp to Senior Engineer",
@@ -42,7 +44,8 @@ talks_data = [
     conference_name: "QA World Conference",
     talk_date: Date.new(2023, 9, 22),
     youtube_link: "https://youtu.be/dQw4w9WgXcQ",
-    blog_post_link: "https://blog.yechiel.me/testing-in-production"
+    blog_post_link: "https://blog.yechiel.me/testing-in-production",
+    blog_post_title: "Safe Testing in Production: A Comprehensive Guide"
   },
   {
     title: "Workshop: Introduction to Ruby on Rails",
@@ -67,6 +70,7 @@ talks_data.each do |talk_attrs|
     talk.talk_date = talk_attrs[:talk_date]
     talk.youtube_link = talk_attrs[:youtube_link]
     talk.blog_post_link = talk_attrs[:blog_post_link]
+    talk.blog_post_title = talk_attrs[:blog_post_title]
     talk.picture_url = talk_attrs[:picture_url]
   end
 end

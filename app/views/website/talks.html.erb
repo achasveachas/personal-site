@@ -45,7 +45,7 @@
                     <p>
                         <%= simple_format(h(talk.description)) %><br>
                         <% if talk.blog_post_link.present? %>
-                            <strong>Read more:</strong> <%= link_to "Blog Post", talk.blog_post_link, target: "_blank" %><br>
+                            <strong>Read more:</strong> <%= link_to talk.blog_post_title, talk.blog_post_link, target: "_blank" %><br>
                         <% end %>
                         <% if is_admin? %>
                             ___

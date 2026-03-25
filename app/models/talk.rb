@@ -9,6 +9,8 @@ class Talk < ApplicationRecord
   
   # Either youtube_link OR picture_url must be present
   validate :must_have_video_or_picture
+  # If blog_post_link is present, blog_post_title must also be present
+  validate :blog_post_title_required_when_link_present
   
   scope :ordered, -> { order(talk_date: :desc) }
 
@@ -37,6 +39,12 @@ class Talk < ApplicationRecord
   def must_have_video_or_picture
     if youtube_link.blank? && picture_url.blank?
       errors.add(:base, "Must have either a YouTube link or a picture URL")
+    end
+  end
+
+  def blog_post_title_required_when_link_present
+    if blog_post_link.present? && blog_post_title.blank?
+      errors.add(:blog_post_title, "must be provided when blog post link is present")
     end
   end
 

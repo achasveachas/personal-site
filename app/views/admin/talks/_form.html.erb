@@ -17,6 +17,8 @@
     <%= form.text_area :alt_text, rows: "2", id: :talk_alt_text, placeholder: "Describe the image for screen readers (optional - will use title if empty)" %><br>
     <%= form.label :blog_post_link %>
     <%= form.text_field :blog_post_link, id: :talk_blog_post_link, placeholder: "Blog post URL (optional)" %><br>
+    <%= form.label :blog_post_title %>
+    <%= form.text_field :blog_post_title, id: :talk_blog_post_title, placeholder: "Blog post title (required if URL provided)" %><br>
     <%= form.submit class: "submit" %>
   <% end %>
 
