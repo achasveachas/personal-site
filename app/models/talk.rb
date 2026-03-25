@@ -5,10 +5,11 @@ class Talk < ApplicationRecord
   validates :talk_date, presence: true
   validates :youtube_link, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
   validates :blog_post_link, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
-  validates :picture_url, format: { 
-    with: /\A(https?:\/\/.*|\/.*|[^\/].*)\z/i, 
-    message: "must be a valid URL or relative path" 
-  }, allow_blank: true
+  validates :picture_url, format: { with: URI::regexp(%w[http https]) }, 
+            allow_blank: true, if: :external_picture_url?
+  validates :picture_url, format: { with: /\A[\w\-\.\/]+\.(jpe?g|png|gif|webp)\z/i,
+            message: "must be a valid asset path to an image file" },
+            allow_blank: true, unless: :external_picture_url?
   
   # Either youtube_link OR picture_url must be present
   validate :must_have_video_or_picture
@@ -25,8 +26,29 @@ class Talk < ApplicationRecord
     end
   end
 
+  def safe_thumbnail_url
+    if youtube_link.present?
+      extract_youtube_thumbnail
+    elsif is_asset_path?
+      begin
+        # Remove leading slash if present for asset_url
+        asset_path = picture_url.gsub(/\A\//, '')
+        ActionController::Base.helpers.asset_url(asset_path)
+      rescue => e
+        Rails.logger.error "Asset URL generation failed for #{picture_url}: #{e.message}"
+        picture_url # Fallback to original path
+      end
+    else
+      picture_url
+    end
+  end
+
   def is_asset_path?
     picture_url.present? && !picture_url.match(/\Ahttps?:\/\//)
+  end
+
+  def external_picture_url?
+    picture_url.present? && picture_url.match(/\Ahttps?:\/\//)
   end
 
   def alt_text_or_title

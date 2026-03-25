@@ -18,7 +18,6 @@
                 
                 <% if talk.thumbnail_url.present? %>
                     <div style="text-align: center; margin: 20px 0;">
-                        <% thumbnail_src = talk.is_asset_path? ? asset_url(talk.picture_url) : talk.thumbnail_url %>
                         <% if talk.clickable? %>
                             <%= link_to talk.youtube_link, 
                                 target: "_blank", 
@@ -26,7 +25,7 @@
                                 'aria-label': "Watch video: #{talk.title}",
                                 title: "Watch video: #{talk.title}" do %>
                                 <div class="video-thumbnail-container" role="img" aria-label="<%= talk.alt_text_or_title %>">
-                                    <img src="<%= thumbnail_src %>" 
+                                    <img src="<%= talk.safe_thumbnail_url %>" 
                                          alt="<%= talk.alt_text_or_title %>" 
                                          class="talk-thumbnail" />
                                     <div class="play-button-overlay" role="button" aria-label="Play video">
@@ -35,7 +34,7 @@
                                 </div>
                             <% end %>
                         <% else %>
-                            <img src="<%= thumbnail_src %>" 
+                            <img src="<%= talk.safe_thumbnail_url %>" 
                                  alt="<%= talk.alt_text_or_title %>" 
                                  class="talk-thumbnail" 
                                  role="img" />

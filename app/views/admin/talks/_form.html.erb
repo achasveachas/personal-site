@@ -1,24 +1,89 @@
 <div class="vitals-text-container">
 
   <%= form_with model: [:admin, @talk], class: "form-container", local: true do |form| %>
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :talk_title %><br>
-    <%= form.label :conference_name %>
-    <%= form.text_field :conference_name, id: :talk_conference_name %><br>
-    <%= form.label :talk_date %>
-    <%= form.date_field :talk_date, id: :talk_date %><br>
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: "5", id: :talk_description %><br>
-    <%= form.label :youtube_link %>
-    <%= form.text_field :youtube_link, id: :talk_youtube_link, placeholder: "YouTube URL" %><br>
-    <%= form.label :picture_url %>
-    <%= form.text_field :picture_url, id: :talk_picture_url, placeholder: "Picture URL (for non-YouTube talks)" %><br>
-    <%= form.label :alt_text, "Alt text for image (accessibility)" %>
-    <%= form.text_area :alt_text, rows: "2", id: :talk_alt_text, placeholder: "Describe the image for screen readers (optional - will use title if empty)" %><br>
-    <%= form.label :blog_post_link %>
-    <%= form.text_field :blog_post_link, id: :talk_blog_post_link, placeholder: "Blog post URL (optional)" %><br>
-    <%= form.label :blog_post_title %>
-    <%= form.text_field :blog_post_title, id: :talk_blog_post_title, placeholder: "Blog post title (required if URL provided)" %><br>
+    <% if @talk.errors.any? %>
+      <div class="error-explanation" role="alert">
+        <h3><%= pluralize(@talk.errors.count, "error") %> prohibited this talk from being saved:</h3>
+        <ul>
+          <% @talk.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field <%= 'field-with-errors' if @talk.errors[:title].any? %>">
+      <%= form.label :title %>
+      <%= form.text_field :title, id: :talk_title %>
+      <% if @talk.errors[:title].any? %>
+        <span class="field-error"><%= @talk.errors[:title].first %></span>
+      <% end %>
+    </div>
+
+    <div class="field <%= 'field-with-errors' if @talk.errors[:conference_name].any? %>">
+      <%= form.label :conference_name %>
+      <%= form.text_field :conference_name, id: :talk_conference_name %>
+      <% if @talk.errors[:conference_name].any? %>
+        <span class="field-error"><%= @talk.errors[:conference_name].first %></span>
+      <% end %>
+    </div>
+
+    <div class="field <%= 'field-with-errors' if @talk.errors[:talk_date].any? %>">
+      <%= form.label :talk_date %>
+      <%= form.date_field :talk_date, id: :talk_date %>
+      <% if @talk.errors[:talk_date].any? %>
+        <span class="field-error"><%= @talk.errors[:talk_date].first %></span>
+      <% end %>
+    </div>
+
+    <div class="field <%= 'field-with-errors' if @talk.errors[:description].any? %>">
+      <%= form.label :description %>
+      <%= form.text_area :description, rows: "5", id: :talk_description %>
+      <% if @talk.errors[:description].any? %>
+        <span class="field-error"><%= @talk.errors[:description].first %></span>
+      <% end %>
+    </div>
+
+    <div class="field <%= 'field-with-errors' if @talk.errors[:youtube_link].any? %>">
+      <%= form.label :youtube_link %>
+      <%= form.text_field :youtube_link, id: :talk_youtube_link, placeholder: "YouTube URL" %>
+      <% if @talk.errors[:youtube_link].any? %>
+        <span class="field-error"><%= @talk.errors[:youtube_link].first %></span>
+      <% end %>
+    </div>
+
+    <div class="field <%= 'field-with-errors' if @talk.errors[:picture_url].any? %>">
+      <%= form.label :picture_url %>
+      <%= form.text_field :picture_url, id: :talk_picture_url, placeholder: "Picture URL or asset path (images/filename.jpg)" %>
+      <% if @talk.errors[:picture_url].any? %>
+        <span class="field-error"><%= @talk.errors[:picture_url].first %></span>
+      <% end %>
+    </div>
+
+    <div class="field <%= 'field-with-errors' if @talk.errors[:alt_text].any? %>">
+      <%= form.label :alt_text, "Alt text for image (accessibility)" %>
+      <%= form.text_area :alt_text, rows: "2", id: :talk_alt_text, placeholder: "Describe the image for screen readers (optional - will use title if empty)" %>
+      <% if @talk.errors[:alt_text].any? %>
+        <span class="field-error"><%= @talk.errors[:alt_text].first %></span>
+      <% end %>
+    </div>
+
+    <div class="field <%= 'field-with-errors' if @talk.errors[:blog_post_link].any? %>">
+      <%= form.label :blog_post_link %>
+      <%= form.text_field :blog_post_link, id: :talk_blog_post_link, placeholder: "Blog post URL (optional)" %>
+      <% if @talk.errors[:blog_post_link].any? %>
+        <span class="field-error"><%= @talk.errors[:blog_post_link].first %></span>
+      <% end %>
+    </div>
+
+    <div class="field <%= 'field-with-errors' if @talk.errors[:blog_post_title].any? %>">
+      <%= form.label :blog_post_title %>
+      <%= form.text_field :blog_post_title, id: :talk_blog_post_title, placeholder: "Blog post title (required if URL provided)" %>
+      <% if @talk.errors[:blog_post_title].any? %>
+        <span class="field-error"><%= @talk.errors[:blog_post_title].first %></span>
+      <% end %>
+    </div>
+
     <%= form.submit class: "submit" %>
   <% end %>
 
