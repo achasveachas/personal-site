@@ -17,7 +17,7 @@
                 </div>
                 
                 <% if talk.thumbnail_url.present? %>
-                    <div style="text-align: center; margin: 20px 0;">
+                    <div class="thumbnail-container">
                         <% if talk.clickable? %>
                             <%= link_to talk.youtube_link, 
                                 target: "_blank", 
