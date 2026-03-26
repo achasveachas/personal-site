@@ -347,6 +347,44 @@ input.submit {
   font-weight: 500;
 }
 
+/* TALK DESCRIPTION STYLES
+======================== */
+
+.talk-description {
+  position: relative;
+  overflow: hidden;
+}
+
+.talk-description.truncated {
+  max-height: 12em; /* Approximately 8-10 lines */
+  position: relative;
+}
+
+.talk-description.truncated::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  background: linear-gradient(transparent, white);
+  pointer-events: none;
+}
+
+.read-more-link {
+  color: #85929d;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.read-more-link:hover {
+  color: #555;
+}
+
 /* TALK THUMBNAIL STYLES
 ======================== */
 

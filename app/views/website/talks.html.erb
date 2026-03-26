@@ -43,17 +43,22 @@
                 <% end %>
                 
                 <div class="description-holder">
-                    <p>
-                        <%= simple_format(h(talk.description)) %><br>
+                    <div class="talk-description truncated" id="description-<%= talk.id %>">
+                        <%= simple_format(h(talk.description)) %>
+                    </div>
+                    <span class="read-more-link" data-talk-id="<%= talk.id %>" id="toggle-<%= talk.id %>">
+                        Show more
+                    </span>
+                    <div style="margin-top: 10px;">
                         <% if talk.blog_post_link.present? %>
-                            <strong>Read more:</strong> <%= link_to talk.blog_post_title, talk.blog_post_link, target: "_blank" %><br>
+                            <strong>Blog post:</strong> <%= link_to talk.blog_post_title, talk.blog_post_link, target: "_blank" %><br>
                         <% end %>
                         <% if is_admin? %>
                             ___
                             <br>
                             <%= link_to "Edit", edit_admin_talk_path(talk) %>
                         <% end %>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
