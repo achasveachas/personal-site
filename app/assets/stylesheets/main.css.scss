@@ -26,17 +26,18 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   text-decoration: none;
-  color: #85929d;
+  color: #5d7eb6;
+  transition: color 0.2s ease;
 }
 
 a:visited {
   text-decoration: none;
-  color: #85929d;
+  color: #5d7eb6;
 }
 
 a:hover {
   text-decoration: none;
-  color: #555;
+  color: #4a6399;
 }
 
 nav {
@@ -172,6 +173,14 @@ input.submit {
   width: 40px;
   height: 40px;
   margin: 0 8px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .profile-photo {
@@ -204,8 +213,11 @@ input.submit {
 
 .profile-name,
 .project-header {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 38px;
+  margin-bottom: 12px;
+  color: #1f2937;
+  font-family: "GothamPro-Medium", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.5px;
 }
 
 .profile-location,
@@ -213,6 +225,8 @@ input.submit {
   font-size: 18px;
   margin-bottom: 20px;
   line-height: 1.6;
+  color: #6b7280;
+  font-weight: 300;
 }
 
 .profile-contact {
@@ -238,28 +252,61 @@ input.submit {
 .details-block {
   width: 80%;
   margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    .title-holder {
+      border-color: #6366f1;
+      
+      h3 {
+        color: #4338ca;
+      }
+    }
+  }
 }
 
 .title-holder {
   font-family: "GothamPro-Bold", Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: normal;
-  color: #85929d;
-  border-bottom: 1px dotted #85929d;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  margin-top: 40px;
+  color: #4b5563;
+  border-bottom: 1px dotted #9ca3af;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  margin-top: 48px;
   min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: border-color 0.3s ease;
+  
+  h3 {
+    transition: color 0.3s ease;
+  }
 }
 
 .description-holder {
   font-family: "GothamPro-Light", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
-  line-height: 1.4em;
+  line-height: 1.6;
+  color: #6b7280;
+  margin-bottom: 24px;
+  
+  p {
+    margin-bottom: 1.2em;
+    transition: color 0.2s ease;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .description-holder h4 {
