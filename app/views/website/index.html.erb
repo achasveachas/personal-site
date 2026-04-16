@@ -12,7 +12,13 @@
                 After discovering that debugging code scratched the same intellectual itch as Talmudic analysis, he made the leap into web development. The transition from ancient texts to modern frameworks proved surprisingly natural.
             </p>
             <p>
-                He now lives in New Jersey with his family, where he works as a senior software engineer and contributes to the Ruby community, including serving on the RubyConf Program Committee. When he's not coding, you'll likely find him explaining why good code and good teaching have more in common than most people think.
+                He now lives in New Jersey with his family, where he works as 
+                <% if current_title.present? %>
+                  <%= [current_title.downcase, current_employer].compact.join(' at ') %>
+                <% else %>
+                  a software engineer
+                <% end %> 
+                and contributes to the Ruby community, including serving on the RubyConf Program Committee. When he's not coding, you'll likely find him explaining why good code and good teaching have more in common than most people think.
             </p>
         </div>
         </div>
@@ -31,6 +37,11 @@
         </div>
     </div>
     <div class="experience-block details-block">
+        <%# 
+        REMINDER: When updating experience below, also update:
+        - app/helpers/application_helper.rb (current_employer and current_title methods)
+        This keeps your header and any other current job references in sync!
+        %>
         <div class="experience-content content-holder">
         <div class="title-holder">
             <h3>Experience</h3>
