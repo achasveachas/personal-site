@@ -11,7 +11,6 @@
     project.save
 end
 
-# Sample talks data
 talks_data = [
   {
     title: "Building Modern Rails Applications",

@@ -11,9 +11,7 @@ class Talk < ApplicationRecord
             message: "must be a valid asset path to an image file" },
             allow_blank: true, unless: :external_picture_url?
   
-  # Either youtube_link OR picture_url must be present
   validate :must_have_video_or_picture
-  # If blog_post_link is present, blog_post_title must also be present
   validate :blog_post_title_required_when_link_present
   
   scope :ordered, -> { order(talk_date: :desc) }
