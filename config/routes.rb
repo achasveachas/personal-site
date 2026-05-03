@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'projects', to: 'website#projects'
   get 'talks', to: 'website#talks'
   get 'blog/:slug', to: 'website#blog_post'
-  get 'url/:slug', to: 'website#blog_post'
+  get 'u/:slug', to: 'website#blog_post'          # New shorter URL format
+  get 'url/:slug', to: 'website#blog_post'        # Legacy URL format (kept for backward compatibility)
   resources :blog_posts, only: [:create, :destroy]
 
   # Internal Redirects
