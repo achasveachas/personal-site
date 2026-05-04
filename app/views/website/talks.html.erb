@@ -53,6 +53,9 @@
                         <% if talk.blog_post_link.present? %>
                             <strong>Blog post:</strong> <%= link_to talk.blog_post_title, talk.blog_post_link, target: "_blank" %><br>
                         <% end %>
+                        <% if talk.slides_url.present? %>
+                            <strong>Slides:</strong> <%= link_to "View slides", talk.slides_url, target: "_blank" %><br>
+                        <% end %>
                         <% if is_admin? %>
                             ___
                             <br>

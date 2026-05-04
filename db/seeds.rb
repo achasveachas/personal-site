@@ -19,7 +19,8 @@ talks_data = [
     talk_date: Date.new(2024, 5, 15),
     youtube_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     blog_post_link: "https://blog.yechiel.me/building-modern-rails",
-    blog_post_title: "Best Practices for Modern Rails Development"
+    blog_post_title: "Best Practices for Modern Rails Development",
+    slides_url: "https://speakerdeck.com/yechiel/building-modern-rails-applications"
   },
   {
     title: "The Art of Code Review",
@@ -35,7 +36,8 @@ talks_data = [
     description: "My journey from coding bootcamp graduate to senior software engineer, including lessons learned and career advice.",
     conference_name: "DevCamp NYC",
     talk_date: Date.new(2023, 11, 8),
-    picture_url: "https://via.placeholder.com/800x450/4A90E2/FFFFFF?text=DevCamp+NYC+2023"
+    picture_url: "https://via.placeholder.com/800x450/4A90E2/FFFFFF?text=DevCamp+NYC+2023",
+    slides_url: "https://docs.google.com/presentation/d/1abc123/edit"
   },
   {
     title: "Testing in Production: Best Practices",
@@ -44,7 +46,8 @@ talks_data = [
     talk_date: Date.new(2023, 9, 22),
     youtube_link: "https://youtu.be/dQw4w9WgXcQ",
     blog_post_link: "https://blog.yechiel.me/testing-in-production",
-    blog_post_title: "Safe Testing in Production: A Comprehensive Guide"
+    blog_post_title: "Safe Testing in Production: A Comprehensive Guide",
+    slides_url: "https://slideshare.net/yechiel/testing-in-production-best-practices"
   },
   {
     title: "Workshop: Introduction to Ruby on Rails",
@@ -63,13 +66,14 @@ talks_data = [
 ]
 
 talks_data.each do |talk_attrs|
-  Talk.find_or_create_by(title: talk_attrs[:title]) do |talk|
-    talk.description = talk_attrs[:description]
-    talk.conference_name = talk_attrs[:conference_name] 
-    talk.talk_date = talk_attrs[:talk_date]
-    talk.youtube_link = talk_attrs[:youtube_link]
-    talk.blog_post_link = talk_attrs[:blog_post_link]
-    talk.blog_post_title = talk_attrs[:blog_post_title]
-    talk.picture_url = talk_attrs[:picture_url]
-  end
+  talk = Talk.find_or_initialize_by(title: talk_attrs[:title])
+  talk.description = talk_attrs[:description]
+  talk.conference_name = talk_attrs[:conference_name] 
+  talk.talk_date = talk_attrs[:talk_date]
+  talk.youtube_link = talk_attrs[:youtube_link]
+  talk.blog_post_link = talk_attrs[:blog_post_link]
+  talk.blog_post_title = talk_attrs[:blog_post_title]
+  talk.picture_url = talk_attrs[:picture_url]
+  talk.slides_url = talk_attrs[:slides_url]
+  talk.save!
 end

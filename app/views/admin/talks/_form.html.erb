@@ -84,6 +84,14 @@
       <% end %>
     </div>
 
+    <div class="field <%= 'field-with-errors' if @talk.errors[:slides_url].any? %>">
+      <%= form.label :slides_url, "Slides URL" %>
+      <%= form.text_field :slides_url, id: :talk_slides_url, placeholder: "Slides URL (optional)" %>
+      <% if @talk.errors[:slides_url].any? %>
+        <span class="field-error"><%= @talk.errors[:slides_url].first %></span>
+      <% end %>
+    </div>
+
     <%= form.submit class: "submit" %>
   <% end %>
 

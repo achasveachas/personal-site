@@ -5,6 +5,7 @@ class Talk < ApplicationRecord
   validates :talk_date, presence: true
   validates :youtube_link, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
   validates :blog_post_link, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
+  validates :slides_url, format: { with: URI::regexp(%w[http https]) }, allow_blank: true
   validates :picture_url, format: { with: URI::regexp(%w[http https]) }, 
             allow_blank: true, if: :external_picture_url?
   validates :picture_url, format: { with: /\A[\w\-\.\/]+\.(jpe?g|png|gif|webp)\z/i,

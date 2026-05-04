@@ -44,7 +44,7 @@ class Admin::TalksController < ApplicationController
   def talk_params
     params.require(:talk).permit(
       :title, :description, :youtube_link, :blog_post_link, :blog_post_title,
-      :conference_name, :talk_date, :picture_url, :alt_text
+      :conference_name, :talk_date, :picture_url, :alt_text, :slides_url
     )
   end
 end
