@@ -22,11 +22,9 @@ class Admin::TalksController < ApplicationController
 
   def update
     @talk = Talk.find_by(id: params[:id])
-    Rails.logger.info "Attempting to update talk with params: #{talk_params.inspect}"
     if @talk.update(talk_params)
       redirect_to talks_path
     else
-      Rails.logger.info "Talk update failed: #{@talk.errors.full_messages}"
       render :edit
     end
   end
