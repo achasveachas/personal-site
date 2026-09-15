@@ -68,3 +68,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'posthog-ruby', '~> 3.23'
+gem 'posthog-rails', '~> 3.18'

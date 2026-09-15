@@ -12,7 +12,11 @@ class AdminController < ApplicationController
 
     def new_session
         if params[:password] == ENV['ADMIN']
-            session[:admin] = true 
+            session[:admin] = true
+            PostHog.capture(
+                event: 'admin_login_succeeded',
+                properties: { authentication_method: 'shared_password' }
+            )
             redirect_to admin_root_path
         else
             render :login

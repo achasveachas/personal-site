@@ -14,6 +14,10 @@ class Admin::TalksController < ApplicationController
   def create
     @talk = Talk.new(talk_params)
     if @talk.save
+      PostHog.capture(
+        event: 'talk_created',
+        properties: { talk_id: @talk.id }
+      )
       redirect_to talks_path
     else
       render :new
@@ -23,6 +27,10 @@ class Admin::TalksController < ApplicationController
   def update
     @talk = Talk.find_by(id: params[:id])
     if @talk.update(talk_params)
+      PostHog.capture(
+        event: 'talk_updated',
+        properties: { talk_id: @talk.id }
+      )
       redirect_to talks_path
     else
       render :edit
@@ -33,6 +41,10 @@ class Admin::TalksController < ApplicationController
     @talk = Talk.find_by(id: params[:id])
     if @talk
       @talk.destroy
+      PostHog.capture(
+        event: 'talk_deleted',
+        properties: { talk_id: @talk.id }
+      )
       redirect_to talks_path
     else
       redirect_to talks_path, alert: "Talk not found"

@@ -24,6 +24,10 @@ class WebsiteController < ApplicationController
   def blog_post
     @blog_post = BlogPost.find_by(slug: params[:slug])
     if @blog_post
+      PostHog.capture(
+        event: 'blog_post_opened',
+        properties: { blog_post_id: @blog_post.id }
+      )
       redirect_to @blog_post.url
     else
       flash[:error] = "Sorry, there is no blog post with the #{params[:slug]} slug."
@@ -32,6 +36,7 @@ class WebsiteController < ApplicationController
   end
 
   def resume
+    PostHog.capture(event: 'resume_downloaded')
     send_file "app/views/website/Yechiel-Kalmenson-Resume.pdf"
   end
 

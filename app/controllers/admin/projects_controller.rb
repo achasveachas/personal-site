@@ -16,6 +16,10 @@ class Admin::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.blog_title = @project.blog_post if @project.blog_title.empty?
     if @project.save
+      PostHog.capture(
+        event: 'project_created',
+        properties: { project_id: @project.id }
+      )
       redirect_to projects_path
     else
       render :new
@@ -27,6 +31,10 @@ class Admin::ProjectsController < ApplicationController
     if @project.update(project_params)
       @project.blog_title = @project.blog_post if @project.blog_title.empty?
       @project.save
+      PostHog.capture(
+        event: 'project_updated',
+        properties: { project_id: @project.id }
+      )
       redirect_to projects_path
     else
       render :edit
@@ -36,6 +44,10 @@ class Admin::ProjectsController < ApplicationController
   def destroy
     @project = Project.find_by(id: params[:id])
     @project.destroy
+    PostHog.capture(
+      event: 'project_deleted',
+      properties: { project_id: @project.id }
+    )
     redirect_to projects_path
   end
 
