@@ -35,7 +35,14 @@ class WebsiteController < ApplicationController
     end
   end
 
+  RESUME_FILES = {
+    'engineering' => 'Yechiel-Kalmenson-Software-Engineer-Resume.pdf',
+    'educator' => 'Yechiel-Kalmenson-Educator-Writer-Resume.pdf'
+  }.freeze
+
   def resume
+    variant = RESUME_FILES.key?(params[:variant]) ? params[:variant] : 'engineering'
+
     PostHog.capture({
       distinct_id: 'anonymous',
       event: 'resume_downloaded',
@@ -46,10 +53,11 @@ class WebsiteController < ApplicationController
           URI.parse(request.referer || '').host
           rescue URI::InvalidURIError
           nil
-        end
+        end,
+        resume_variant: variant
       }
     })
-    send_file "app/views/website/Yechiel-Kalmenson-Resume.pdf"
+    send_file "app/views/website/#{RESUME_FILES[variant]}"
   end
 
   def torah_tech

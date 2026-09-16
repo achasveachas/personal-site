@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # Internal Redirects
   get 'blog', to: 'website#blog'
   get 'resume', to: 'website#resume'
+  get 'resume/:variant', to: 'website#resume', constraints: { variant: /engineering|educator/ }
   get 'torahtech', to: 'website#torah_tech'
 
   # External Redirects
