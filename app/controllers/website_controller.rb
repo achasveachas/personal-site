@@ -36,7 +36,19 @@ class WebsiteController < ApplicationController
   end
 
   def resume
-    PostHog.capture(event: 'resume_downloaded')
+    PostHog.capture({
+      distinct_id: 'anonymous',
+      event: 'resume_downloaded',
+      properties: {
+        '$ip' => request.remote_ip,
+        '$referrer' => request.referer,
+        '$referring_domain' => begin
+          URI.parse(request.referer || '').host
+          rescue URI::InvalidURIError
+          nil
+        end
+      }
+    })
     send_file "app/views/website/Yechiel-Kalmenson-Resume.pdf"
   end
 
