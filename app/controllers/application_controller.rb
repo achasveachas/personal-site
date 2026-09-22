@@ -1,16 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :get_page_title, :require_admin, :is_admin?, :track_action
-  before_action :block_spam
+  before_action :redirect_to_non_www
 
   private
-
-  def block_spam
-    if request.referer&.include?(".ru") && !request.referer&.include?("yandex")
-      current_visit.delete
-      head 403 
-    end
-  end
 
   def get_page_title
     params[:action].capitalize
@@ -24,7 +17,12 @@ class ApplicationController < ActionController::Base
     session[:admin]
   end
 
-
+  def redirect_to_non_www
+    if request.host.start_with?('www.')
+      redirect_to request.url.sub('www.', ''), status: :moved_permanently
+    end
+  end
+  
   def track_action
     ahoy.track "Ran action", request.path_parameters
     current_visit.update(company: params[:company]) if params[:company]
