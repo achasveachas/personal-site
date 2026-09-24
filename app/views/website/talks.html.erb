@@ -22,6 +22,8 @@
                             <%= link_to talk.youtube_link, 
                                 target: "_blank", 
                                 class: "video-thumbnail-link",
+                                'data-talk-id': talk.id,
+                                'data-talk-title': talk.title,
                                 'aria-label': "Watch video: #{talk.title}",
                                 title: "Watch video: #{talk.title}" do %>
                                 <div class="video-thumbnail-container" role="img" aria-label="<%= talk.alt_text_or_title %>">

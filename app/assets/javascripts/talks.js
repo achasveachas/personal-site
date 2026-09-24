@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleDescription(talkId);
         });
     });
+
+    document.querySelectorAll('.video-thumbnail-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (typeof posthog !== 'undefined') {
+                posthog.capture('talk_video_viewed', {
+                    talk_id: this.getAttribute('data-talk-id'),
+                    talk_title: this.getAttribute('data-talk-title')
+                });
+            }
+        });
+    });
 });
 
 function toggleDescription(talkId) {
