@@ -1,0 +1,56 @@
+name: Production Smoke
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      RAILS_ENV: production
+      SECRET_KEY_BASE_DUMMY: '1'
+      RAILS_SERVE_STATIC_FILES: '1'
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/personal_site_smoke
+      BUNDLE_WITHOUT: development:test
+      BUNDLE_FROZEN: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Prepare isolated database
+        run: |
+          bundle exec rake db:create
+          bundle exec rake db:schema:load
+          bundle exec rake db:migrate
+        env:
+          DISABLE_DATABASE_ENVIRONMENT_CHECK: '1'
+      - name: Compile assets and reload cached manifest
+        run: |
+          bundle exec rake assets:precompile
+          bundle exec rake assets:precompile
+      - name: Boot production app and check public pages
+        run: bundle exec rails runner script/smoke.rb
