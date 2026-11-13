@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>2026 End of Year Review: Shayna Kalmenson</title>
+<style>
+  :root {
+    --bg: #f6f3ef;
+    --card: #ffffff;
+    --ink: #1f1d2b;
+    --muted: #5f5a6b;
+    --line: #e4ddd4;
+    --accent: #8a3b5c;
+    --accent-soft: #f6e7ee;
+    --gold: #b7862b;
+    --gold-soft: #fbf3e2;
+    --pill: #f1ede8;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16141c;
+      --card: #211e29;
+      --ink: #f1edf4;
+      --muted: #b5aec0;
+      --line: #363042;
+      --accent: #e48bb0;
+      --accent-soft: #3a2532;
+      --gold: #e7bd62;
+      --gold-soft: #352c1c;
+      --pill: #2c2836;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+
+  .crumbs { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+  .crumbs span + span::before { content: "›"; margin: 0 8px; opacity: .6; }
+
+  header.profile {
+    display: flex; gap: 18px; align-items: center;
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px 24px; margin-bottom: 20px;
+  }
+  .avatar {
+    flex: none; width: 64px; height: 64px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--accent); color: #fff; font-weight: 700; font-size: 24px; letter-spacing: .5px;
+  }
+  @media (prefers-color-scheme: dark) { .avatar { color: #1b1720; } }
+  .profile h1 { margin: 0; font-size: 24px; line-height: 1.25; }
+  .profile .role { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; font-size: 13px; color: var(--muted); }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px 24px; margin-bottom: 16px;
+  }
+  .card h2 { margin: 0 0 4px; font-size: 18px; }
+  .card h2 .sub { color: var(--muted); font-weight: 500; font-size: 15px; }
+  .card p { margin: 10px 0 0; }
+  .card ul { margin: 10px 0 0; padding-left: 20px; }
+  .card li { margin: 6px 0; }
+  .note { font-size: 13px; color: var(--muted); font-style: italic; font-weight: 700; margin-top: 6px; }
+
+  .legend h2 { font-size: 16px; margin-bottom: 8px; }
+  .legend dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: 14px; }
+  .legend dl { align-items: center; }
+  .legend dt {
+    justify-self: start; padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent);
+  }
+  .legend dt.top { background: var(--gold-soft); color: var(--gold); border-color: var(--gold); }
+  .legend dd { margin: 0; color: var(--muted); }
+
+  .scale {
+    list-style: none; padding: 0; margin: 12px 0 4px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .scale li {
+    margin: 0; padding: 5px 12px; border-radius: 999px;
+    background: var(--pill); color: var(--muted); font-size: 13px; border: 1px solid transparent;
+  }
+  .scale li[aria-current="true"] {
+    background: var(--accent-soft); color: var(--accent); border-color: var(--accent); font-weight: 700;
+  }
+  .scale li[aria-current="true"]::before { content: "● "; }
+  .scale.top li[aria-current="true"] { background: var(--gold-soft); color: var(--gold); border-color: var(--gold); }
+
+  details.secret > summary {
+    list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  }
+  details.secret > summary::-webkit-details-marker { display: none; }
+  details.secret > summary h2 { margin: 0; }
+  .redact { background: var(--ink); color: var(--ink); border-radius: 3px; padding: 0 3px; font-style: normal; letter-spacing: -1px; user-select: none; }
+  .lock { font-size: 13px; color: var(--accent); font-weight: 700; white-space: nowrap; }
+  .lock::after { content: " ▾"; }
+  details.secret[open] .lock::after { content: " ▴"; }
+  details.secret[open] > summary { margin-bottom: 4px; }
+  @media print { details.secret > * { display: block; } }
+
+  .section-title {
+    margin: 32px 0 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted);
+  }
+
+  .footer {
+    margin-top: 28px; padding: 18px 20px; border-radius: var(--radius);
+    border: 1px dashed var(--line); color: var(--muted); font-size: 13px; text-align: center;
+  }
+  .submitted {
+    display: inline-block; margin-top: 10px; padding: 8px 18px; border-radius: 999px;
+    background: var(--accent); color: #fff; font-weight: 700; font-size: 14px;
+  }
+  @media (prefers-color-scheme: dark) { .submitted { color: #1b1720; } }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 20px 14px 48px; }
+    header.profile, .card { padding: 18px; }
+    .legend dl { grid-template-columns: 1fr; gap: 2px; }
+    .legend dd { margin-bottom: 8px; }
+  }
+  @media print {
+    body { background: #fff; }
+    .card, header.profile { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <nav class="crumbs" aria-label="breadcrumb">
+    <span>Performance reviews</span><span>2026 End of Year Review</span><span>Shayna Kalmenson</span>
+  </nav>
+
+  <header class="profile">
+    <div class="avatar" aria-hidden="true">SK</div>
+    <div>
+      <h1>Shayna Kalmenson</h1>
+      <p class="role">CEO and Akeres Habayis · Mother of 8 · Preschool Morah (reluctantly) · Wife (enthusiastically)</p>
+      <div class="meta">
+        <span><b>Tenure:</b> 16 years and counting</span>
+        <span><b>Reviewer:</b> Her husband (self-nominated; no other reviewers were accepted)</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="card legend" aria-labelledby="scale-h">
+    <h2 id="scale-h">Rating scale</h2>
+    <dl>
+      <dt class="top">Eishes Chayil</dt><dd>Top 1% of wives in recorded history. Shlomo HaMelech wrote a song about this level.</dd>
+      <dt>Akeres Habayis</dt><dd>Top 5%. Holds up everything and everyone around her.</dd>
+      <dt>Solid Performer</dt><dd>Top 10%. Reliably excellent.</dd>
+      <dt>Developing</dt><dd>Making progress, with room to grow.</dd>
+      <dt>Detrimental</dt><dd>Not applicable to this employee. The reviewer checked twice.</dd>
+    </dl>
+  </section>
+
+  <h2 class="section-title">Review</h2>
+
+  <article class="card">
+    <h2>Chesed</h2>
+    <ol class="scale top" aria-label="Rating">
+      <li>Detrimental</li><li>Developing</li><li>Solid Performer</li><li>Akeres Habayis</li><li aria-current="true">Eishes Chayil</li>
+    </ol>
+    <p>Shayna takes care of everyone. The kids, me, her friends, her students, and even her own mother. If someone in her orbit needs something, she's already on it. Her caring isn't a task she performs. It's who she is.</p>
+  </article>
+
+  <article class="card">
+    <h2>Shlichus</h2>
+    <ol class="scale top" aria-label="Rating">
+      <li>Detrimental</li><li>Developing</li><li>Solid Performer</li><li>Akeres Habayis</li><li aria-current="true">Eishes Chayil</li>
+    </ol>
+    <p>This year Shayna went back to teaching in Cheder, and she approaches it as a Shlichus. She isn't just watching children. She's shaping little neshamos at the age when it matters most, and they're lucky to have her. It's also hard and comes at a cost: she comes home from a full day with other people's children to a full house of our own, and she still gives it her all. I want it on the record, in writing: I see it, I know what it costs her, and I'm grateful for it every single day.</p>
+  </article>
+
+  <article class="card">
+    <h2>Chinuch <span class="sub">(Parenting)</span></h2>
+    <ol class="scale top" aria-label="Rating">
+      <li>Detrimental</li><li>Developing</li><li>Solid Performer</li><li>Akeres Habayis</li><li aria-current="true">Eishes Chayil</li>
+    </ol>
+    <p>Shayna is a wonderful mother, and it's not by accident. She has worked deliberately to build a home where our kids feel safe and loved. She took what she learned growing up, kept the good, and set out to do better. Our children are growing up in a warmer home because of her.</p>
+  </article>
+
+  <article class="card">
+    <h2>Growth</h2>
+    <ol class="scale top" aria-label="Rating">
+      <li>Detrimental</li><li>Developing</li><li>Solid Performer</li><li>Akeres Habayis</li><li aria-current="true">Eishes Chayil</li>
+    </ol>
+    <p>She never stops working on herself. There's always a shiur, a farbrengen, a talk, or a podcast playing. And it shows: her married friends come to her for parenting advice, her single friends for Shiddch advice, and even her mother calls her for help with her younger children. When the previous generation is consulting you, you've officially outgrown the job description.</p>
+  </article>
+
+  <article class="card">
+    <h2>Aidelkeit &amp; Tznius</h2>
+    <ol class="scale top" aria-label="Rating">
+      <li>Detrimental</li><li>Developing</li><li>Solid Performer</li><li>Akeres Habayis</li><li aria-current="true">Eishes Chayil</li>
+    </ol>
+    <p>Shayna carries herself with a quiet refinement and dignity that sets the tone for our entire home. Our daughters have the best possible role model, and our sons will know exactly what to look for.</p>
+  </article>
+
+  <details class="card secret">
+    <summary>
+      <h2>Chein <span class="sub">(Beauty)</span></h2>
+      <span class="lock">🔒 For Shayna's eyes only</span>
+    </summary>
+    <ol class="scale top" aria-label="Rating">
+      <li>Detrimental</li><li>Developing</li><li>Solid Performer</li><li>Akeres Habayis</li><li aria-current="true">Eishes Chayil</li>
+    </ol>
+    <p class="note">The reviewer requested a higher rating; none exists.</p>
+    <p>Let the record show: Shayna is beautiful. Not "beautiful for someone with eight kids." Not "beautiful to her husband." Beautiful. Period. Objectively. This is not an opinion; it's a fact.</p>
+    <ul>
+      <li><b>The curves eight children brought:</b> officially reclassified as an upgrade. The world might call it "extra"; the reviewer calls it softer, fuller, more feminine, and more beautiful. They're the shape of a woman who brought eight neshamos into the world and built a home around them. They also make the nightly cuddle immeasurably better: warmer, cozier, and more fulfilling than ever. The reviewer considers this a major improvement to his favorite perk.</li>
+      <li><b>The tiny lines she inspects in the mirror:</b> detectable only with an electron microscope and a great deal of self-criticism. The reviewer has looked very carefully, purely for research purposes. Findings: none. Research is ongoing.</li>
+      <li><b>Effect on the reviewer:</b> after 16 years, he still gets butterflies when she walks into the room. His eyes have been caught lingering on multiple occasions. He is not sorry, and has no plans to stop.</li>
+      <li><b>Year-over-year attraction:</b> up and to the right, every single year. Analysts are baffled. No ceiling in sight.</li>
+    </ul>
+    <p>Ending the day cuddled up next to her remains the single best perk of this position, and it is non-negotiable. Shayna's own self-assessment in this category was reviewed and rejected by management. Appeals will not be heard.</p>
+    <p class="note">Additional findings: <span class="redact" aria-label="redacted">████████ ██ ███████ ████████████ ██ ███████ ████████████ ██ ███████ ████████████ ██ ███████ ████</span>. Note: Contents redacted for tznius reasons. Full unredacted briefing available to the employee upon request, in person, in a setting allowed according to Halacha.</p>
+  </details>
+
+  <article class="card">
+    <h2>Leadership</h2>
+    <ol class="scale top" aria-label="Rating">
+      <li>Detrimental</li><li>Developing</li><li>Solid Performer</li><li>Akeres Habayis</li><li aria-current="true">Eishes Chayil</li>
+    </ol>
+    <p>I've always said I married someone I can look up to, both figuatively and literally. Shayna is also the household's lead specialist in Top-Shelf Retrieval. Performance in this area is unmatched, and the reviewer remains fully dependent.</p>
+  </article>
+
+  <article class="card">
+    <h2>Bitachon <span class="sub">(Letting Go)</span></h2>
+    <ol class="scale" aria-label="Rating">
+      <li>Detrimental</li><li>Developing</li><li aria-current="true">Solid Performer</li><li>Akeres Habayis</li><li>Eishes Chayil</li>
+    </ol>
+    <p>Shayna delegates. The jobs just never quite leave her plate. Even after she hands something off, she still carries the worry of whether it'll get done, and how. Part of why she's so stretched is that she's carrying everything at once, including the things she's already given away. My hope for next year is that when she hands someone a job, she lets it be theirs and trusts them to do it, even if it's not exactly how she'd have done it. She deserves the break that comes with that.</p>
+  </article>
+
+  <article class="card">
+    <h2>Self-Care</h2>
+    <ol class="scale" aria-label="Rating">
+      <li>Detrimental</li><li aria-current="true">Developing*</li><li>Solid Performer</li><li>Akeres Habayis</li><li>Eishes Chayil</li>
+    </ol>
+    <p class="note">*In caring for herself only. In caring for everyone else, see Eishes Chayil above.</p>
+    <p>Shayna sits down to dinner with us, but she never really gets to enjoy it, because she's too busy making sure every picky eater at the table eats enough. (With our crew, that requires the persuasion skills of a hostage negotiator.) She deserves to be taken care of too: to sit back and enjoy her own meal, and to let herself be pampered once in a while without having to be convinced first.</p>
+  </article>
+
+  <article class="card">
+    <h2>Communication</h2>
+    <ol class="scale" aria-label="Rating">
+      <li>Detrimental</li><li>Developing</li><li>Solid Performer</li><li aria-current="true">Akeres Habayis</li><li>Eishes Chayil</li>
+    </ol>
+    <p class="note">With a joint improvement plan.</p>
+    <p>Shayna is a great communicator about everything except one topic: herself. She tells me when something's wrong, but often not what she needs, and then I'm supposed to figure it out. Last birthday (over Sukkos, at her family's, so not exactly easy conditions) is a good example: she wanted it to be a bigger deal, but neither of us could say what that would have looked like. Next year, the reviewer requests a clear vision of success in advance 😄. In fairness, this is a two-way plan. I know I don't share enough about my own day, and that leaves our conversations feeling one-sided for her. I'm working on it, and I'll keep working on it.</p>
+  </article>
+
+  <h2 class="section-title">Summary</h2>
+
+  <article class="card">
+    <h2>I would enthusiastically marry Shayna again</h2>
+    <ol class="scale top" aria-label="Rating">
+      <li>Strongly Disagree</li><li>Disagree</li><li>Neutral</li><li>Agree</li><li aria-current="true">Strongly Agree</li>
+    </ol>
+    <p>Every day for 16 years, and ad meah v'esrim. She's the heart of our home, the best mother our kids could have, and still the person I most want to come home to.</p>
+  </article>
+
+  <article class="card">
+    <h2>Start / Stop / Keep</h2>
+    <ul>
+      <li><b>Keep:</b> the love, the dedication, the constant growth, the way you make our home feel safe. All of it.</li>
+      <li><b>Start:</b> relaxing and enjoying your own meal, letting yourself be pampered without a debate first, and telling me what you want so I can actually give it to you.</li>
+      <li><b>Stop:</b> carrying jobs you've already handed off, and putting yourself last.</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h2>Compensation &amp; Facilities</h2>
+    <ul>
+      <li><b>Effective immediately:</b> a mandatory, non-negotiable weekly walk and monthly date night. No combining it with the reviewer's birthday.</li>
+      <li><b>Outstanding capital request: "We need a new house."</b> This is resubmitted every time a drawer sticks, a door squeaks or wheneer we're out of royal icecream. Status: under review.</li>
+    </ul>
+  </article>
+
+  <div class="footer">
+    This review has been shared with the employee's manager. The employee has no manager. The reviewer has been informed that he is not the manager.<br>
+    <span class="submitted">Review submitted with love</span>
+  </div>
+
+</main>
+</body>
+</html>
